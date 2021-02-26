@@ -12,9 +12,9 @@ The VexRiscv has the following features.
 </ul>
 The RISC-V core toplevel and other modules source code found in VexRiscv.v file,  the vexrisc_full.qsf is the Quartus setting file. 
 The synthesis, place, route, and static timing analysis report found in the output_files/ directory. 
-The synthesis results were obtained by synthesizing the VexRiscv.v on Intel Quartus Pro 2020.3 software tool with the fastest speed grade and Hyperflex Optimization techniques to get the maximum operating frequency.
-<h3> Area utilization and maximum operating frequency of VexRisc-V on Intel Stratix 10 FPGA </h3>
+The synthesis results were obtained by synthesizing the VexRisc-V on Intel Quartus Pro 2020.3 software tool with the fastest speed grade and Hyperflex Optimization techniques to get the maximum operating frequency.
+<h3> Area utilization and the maximum operating frequency of VexRisc-V on Intel Stratix 10 FPGA </h3>
 <ul>
-  <li> LUTs : 2222 </li>
-  <li> Fmax : 291MHz</li>
+  <li> LUTs: 2222 </li>
+  <li> Fmax: 291MHz</li>
 </ul>
