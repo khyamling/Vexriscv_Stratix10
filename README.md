@@ -4,7 +4,7 @@ Here, we optimize the VexRISC-V processor on Intel Stratix 10 FPGA board using H
 The VexRiscv has the following features.
 <ul>
   <li> Support the 32-bit RISC-V ISA(RV32IM). </li>
-  <li> 5-stage "classic" RISC pipeline</li>
+  <li> 5-stage RISC pipeline</li>
   <li>Optimized for Intel FPGA.</li>
     <li>The Instruction cache, Data cache.</li>
     <li>Support single cycle barrel shifter.</li>
