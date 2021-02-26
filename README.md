@@ -7,8 +7,7 @@ The VexRiscv has the following features.
   <li> 5-stage pipeline</li>
   <li>Optimized for Intel FPGA.</li>
     <li>The Instruction cache, Data cache.</li>
-    <li>Support single cycle barrel shifter.</li>
-    <li>Supports debug module, catch exceptions, dynamic branch, memory management unit(MMU).</li>
+    <li>Supports single cycle barrel shifter, debug module, catch exceptions, dynamic branch, memory management unit(MMU).</li>
 </ul>
 The RISC-V core toplevel and other modules source code found in VexRiscv.v file,  the vexrisc_full.qsf is the Quartus setting file. 
 The synthesis, place, route, and static timing analysis report found in the output_files/ directory. 
