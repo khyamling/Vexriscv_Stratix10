@@ -1,0 +1,8 @@
+<internal_error>
+	<executable>quartus_fit</executable>
+	<sub_system>MEM</sub_system>
+	<error>*** Fatal Error: Out of memory in module quartus_fit (8340 megabytes used).</error>
+	<date>Fri Jan  1 15:06:23 2021</date>
+	<version>Version 20.3.0 Build 158 09/24/2020 SC Pro Edition</version>
+</internal_error>
+

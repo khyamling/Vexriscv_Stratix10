@@ -1,0 +1,486 @@
+Fitter Route Stage Report for vexrisc_full
+Fri Feb 26 15:47:13 2021
+Quartus Prime Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Routing Usage Summary
+  3. Route Messages
+  4. Estimated Delay Added for Hold Timing Summary
+  5. Estimated Delay Added for Hold Timing Details
+  6. Global Router Wire Utilization Map
+  7. Peak Wire Demand Summary
+  8. Peak Wire Demand Details
+  9. Peak Total Grid Crossings
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------+
+; Routing Usage Summary                                        ;
++--------------------------------+-----------------------------+
+; Routing Resource Type          ; Usage                       ;
++--------------------------------+-----------------------------+
+; Block Input Muxes              ; 4 / 178,868 ( < 1 % )       ;
+; Block interconnects            ; 7,602 / 2,019,600 ( < 1 % ) ;
+; C16 interconnects              ; 42 / 50,112 ( < 1 % )       ;
+; C2 interconnects               ; 1,326 / 300,672 ( < 1 % )   ;
+; C3 interconnects               ; 1,519 / 609,984 ( < 1 % )   ;
+; C4 interconnects               ; 1,955 / 392,256 ( < 1 % )   ;
+; CLOCK_INVERTs                  ; 0 / 1,984 ( 0 % )           ;
+; DCM_muxes                      ; 0 / 544 ( 0 % )             ;
+; Direct links                   ; 1,390 / 2,019,600 ( < 1 % ) ;
+; GAP Interconnects              ; 0 / 86,688 ( 0 % )          ;
+; GAPs                           ; 0 / 29,304 ( 0 % )          ;
+; HIO Buffers                    ; 0 / 80,640 ( 0 % )          ;
+; Horizontal Buffers             ; 0 / 57,888 ( 0 % )          ;
+; Horizontal_clock_segment_muxes ; 0 / 2,240 ( 0 % )           ;
+; Programmable Inverts           ; 22 / 103,536 ( < 1 % )      ;
+; R10 interconnects              ; 1,497 / 568,872 ( < 1 % )   ;
+; R2 interconnects               ; 1,496 / 501,120 ( < 1 % )   ;
+; R24 interconnects              ; 17 / 72,576 ( < 1 % )       ;
+; R24/C16 interconnect drivers   ; 57 / 100,224 ( < 1 % )      ;
+; R4 interconnects               ; 2,223 / 727,776 ( < 1 % )   ;
+; Row Clock Tap-Offs             ; 195 / 162,000 ( < 1 % )     ;
+; Switchbox_clock_muxes          ; 9 / 12,800 ( < 1 % )        ;
+; Vertical_seam_tap_muxes        ; 6 / 5,952 ( < 1 % )         ;
++--------------------------------+-----------------------------+
+
+
++----------------+
+; Route Messages ;
++----------------+
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+    Info: Processing started: Fri Feb 26 15:44:26 2021
+    Info: System process ID: 5416
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off vexrisc_full -c vexrisc_full --plan --place --route --retime --finalize
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = vexrisc_full
+Info: Revision = vexrisc_full
+Info (170193): Fitter routing operations beginning
+Info (20215): Router estimated peak short interconnect demand : 45% of down directional wire in region X112_Y80 to X119_Y87
+    Info (20265): Estimated peak short right directional wire demand : 10% in region X104_Y72 to X111_Y79
+    Info (20265): Estimated peak short left directional wire demand : 10% in region X112_Y72 to X119_Y79
+    Info (20265): Estimated peak short up directional wire demand : 38% in region X112_Y72 to X119_Y79
+    Info (20265): Estimated peak short down directional wire demand : 45% in region X112_Y80 to X119_Y87
+Info (20215): Router estimated peak long high speed interconnect demand : 140% of up directional wire in region X104_Y72 to X111_Y79
+    Info (20265): Estimated peak long high speed right directional wire demand : 32% in region X104_Y72 to X111_Y79
+    Info (20265): Estimated peak long high speed left directional wire demand : 78% in region X112_Y80 to X119_Y87
+    Info (20265): Estimated peak long high speed up directional wire demand : 140% in region X104_Y72 to X111_Y79
+    Info (20265): Estimated peak long high speed down directional wire demand : 135% in region X104_Y80 to X111_Y87
+    Info (20315): Note that the router may use short wires to implement long connections at higher delay
+Info (170239): Router is attempting to preserve 0.03 percent of routes from an earlier compilation, a user specified Routing Constraints File, or internal routing requirements.
+Info (11888): Total time spent on timing analysis during Routing is 1.10 seconds.
+Warning (18291): Timing characteristics of device 1SX065HH1F35E1VG are preliminary
+Info (16607): Fitter routing operations ending: elapsed time is 00:00:51
+
+
++------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary              ;
++-----------------+----------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
++-----------------+----------------------+-------------------+
+; clk             ; clk                  ; 9.5               ;
++-----------------+----------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                          ;
++---------------------------------------------+------------------------------------------------------+-------------------+
+; Source Register                             ; Destination Register                                 ; Delay Added in ns ;
++---------------------------------------------+------------------------------------------------------+-------------------+
+; execute_to_memory_BRANCH_DO~LRTM_5          ; _zz_70_~LRTM_1                                       ; 0.231             ;
+; execute_to_memory_BRANCH_DO~LRTM_4          ; _zz_70_~LRTM_1                                       ; 0.231             ;
+; execute_to_memory_BRANCH_DO~LRTM_3          ; _zz_70_~LRTM_1                                       ; 0.231             ;
+; execute_to_memory_BRANCH_DO~LRTM_2          ; _zz_70_~LRTM_1                                       ; 0.231             ;
+; execute_to_memory_BRANCH_DO~LRTM_1          ; _zz_70_~LRTM_1                                       ; 0.231             ;
+; execute_to_memory_BRANCH_DO~LRTM            ; _zz_70_~LRTM_1                                       ; 0.231             ;
+; execute_to_memory_BRANCH_CALC[1]            ; _zz_70_~LRTM_1                                       ; 0.231             ;
+; memory_arbitration_isValid                  ; _zz_70_~LRTM_1                                       ; 0.231             ;
+; execute_to_memory_REGFILE_WRITE_DATA[15]    ; MmuPlugin_shared_vpn_0[3]                            ; 0.221             ;
+; CsrPlugin_mtval[5]                          ; CsrPlugin_mepc[5]                                    ; 0.178             ;
+; CsrPlugin_mepc[5]                           ; CsrPlugin_mepc[5]                                    ; 0.178             ;
+; MmuPlugin_satp_ppn[5]                       ; CsrPlugin_mepc[5]                                    ; 0.178             ;
+; execute_CsrPlugin_csr_384                   ; CsrPlugin_mepc[5]                                    ; 0.178             ;
+; execute_CsrPlugin_csr_835                   ; CsrPlugin_mepc[5]                                    ; 0.178             ;
+; execute_CsrPlugin_csr_833                   ; CsrPlugin_mepc[5]                                    ; 0.178             ;
+; decode_to_execute_SRC2_CTRL[1]~LRTM         ; execute_to_memory_SHIFT_RIGHT[14]                    ; 0.177             ;
+; CsrPlugin_mtval[9]                          ; CsrPlugin_mepc[9]                                    ; 0.166             ;
+; CsrPlugin_mepc[9]                           ; CsrPlugin_mepc[9]                                    ; 0.166             ;
+; MmuPlugin_satp_ppn[9]                       ; CsrPlugin_mepc[9]                                    ; 0.166             ;
+; CsrPlugin_mtval[6]                          ; CsrPlugin_mepc[6]                                    ; 0.166             ;
+; CsrPlugin_mepc[6]                           ; CsrPlugin_mepc[6]                                    ; 0.166             ;
+; MmuPlugin_satp_ppn[6]                       ; CsrPlugin_mepc[6]                                    ; 0.166             ;
+; CsrPlugin_mtval[14]                         ; CsrPlugin_mepc[14]                                   ; 0.164             ;
+; CsrPlugin_mepc[14]                          ; CsrPlugin_mepc[14]                                   ; 0.164             ;
+; MmuPlugin_satp_ppn[14]                      ; CsrPlugin_mepc[14]                                   ; 0.164             ;
+; decode_to_execute_INSTRUCTION[9]            ; execute_to_memory_SHIFT_RIGHT[14]                    ; 0.160             ;
+; CsrPlugin_mtval[15]                         ; CsrPlugin_mepc[15]                                   ; 0.158             ;
+; CsrPlugin_mepc[15]                          ; CsrPlugin_mepc[15]                                   ; 0.158             ;
+; MmuPlugin_satp_ppn[15]                      ; CsrPlugin_mepc[15]                                   ; 0.158             ;
+; CsrPlugin_mepc[0]                           ; CsrPlugin_mepc[0]                                    ; 0.151             ;
+; CsrPlugin_mcause_exceptionCode[0]           ; CsrPlugin_mepc[0]                                    ; 0.151             ;
+; CsrPlugin_mtval[0]                          ; CsrPlugin_mepc[0]                                    ; 0.151             ;
+; MmuPlugin_satp_ppn[0]                       ; CsrPlugin_mepc[0]                                    ; 0.151             ;
+; execute_CsrPlugin_csr_834                   ; CsrPlugin_mepc[0]                                    ; 0.151             ;
+; execute_to_memory_REGFILE_WRITE_DATA[12]    ; MmuPlugin_shared_vpn_0[0]                            ; 0.150             ;
+; decode_to_execute_SRC2_CTRL[0]              ; execute_to_memory_SHIFT_RIGHT[14]                    ; 0.149             ;
+; decode_to_execute_INSTRUCTION[29]           ; execute_to_memory_INSTRUCTION[29]                    ; 0.148             ;
+; execute_to_memory_REGFILE_WRITE_DATA[23]    ; MmuPlugin_shared_vpn_1[1]                            ; 0.144             ;
+; decode_to_execute_SRC1_CTRL[1]              ; execute_to_memory_BRANCH_DO~LRTM_5                   ; 0.136             ;
+; execute_to_memory_REGFILE_WRITE_DATA[28]    ; MmuPlugin_shared_vpn_1[6]                            ; 0.136             ;
+; execute_to_memory_REGFILE_WRITE_DATA[22]    ; MmuPlugin_shared_vpn_1[0]                            ; 0.135             ;
+; execute_to_memory_REGFILE_WRITE_DATA[25]    ; MmuPlugin_shared_vpn_1[3]                            ; 0.135             ;
+; decode_to_execute_RS2[2]                    ; execute_to_memory_SHIFT_RIGHT[14]                    ; 0.134             ;
+; decode_to_execute_SRC2_CTRL[1]              ; execute_to_memory_SHIFT_RIGHT[14]                    ; 0.134             ;
+; decode_to_execute_INSTRUCTION[11]           ; execute_to_memory_INSTRUCTION[11]                    ; 0.133             ;
+; execute_to_memory_REGFILE_WRITE_DATA[26]    ; MmuPlugin_shared_vpn_1[4]                            ; 0.132             ;
+; execute_to_memory_REGFILE_WRITE_DATA[14]    ; MmuPlugin_shared_vpn_0[2]                            ; 0.118             ;
+; execute_to_memory_REGFILE_WRITE_DATA[16]    ; MmuPlugin_shared_vpn_0[4]                            ; 0.110             ;
+; CsrPlugin_mtval[8]                          ; CsrPlugin_mepc[8]                                    ; 0.109             ;
+; CsrPlugin_mepc[8]                           ; CsrPlugin_mepc[8]                                    ; 0.109             ;
+; MmuPlugin_satp_ppn[8]                       ; CsrPlugin_mepc[8]                                    ; 0.109             ;
+; decode_to_execute_INSTRUCTION[31]           ; execute_to_memory_BRANCH_DO~LRTM_5                   ; 0.108             ;
+; execute_to_memory_REGFILE_WRITE_DATA[30]    ; MmuPlugin_shared_vpn_1[8]                            ; 0.105             ;
+; decode_to_execute_INSTRUCTION[12]           ; decode_to_execute_RS1[4]                             ; 0.104             ;
+; decode_to_execute_PREDICTION_HAD_BRANCHED2  ; execute_to_memory_BRANCH_CALC[28]                    ; 0.090             ;
+; CsrPlugin_mtval[13]                         ; CsrPlugin_mepc[13]                                   ; 0.088             ;
+; CsrPlugin_mepc[13]                          ; CsrPlugin_mepc[13]                                   ; 0.088             ;
+; MmuPlugin_satp_ppn[13]                      ; CsrPlugin_mepc[13]                                   ; 0.088             ;
+; execute_to_memory_REGFILE_WRITE_DATA[27]    ; MmuPlugin_shared_vpn_1[5]                            ; 0.083             ;
+; decode_to_execute_INSTRUCTION[30]           ; execute_to_memory_BRANCH_DO~LRTM_4                   ; 0.082             ;
+; memory_to_writeBack_INSTRUCTION[11]         ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; memory_to_writeBack_INSTRUCTION[10]         ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; memory_to_writeBack_INSTRUCTION[8]          ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; memory_to_writeBack_INSTRUCTION[7]          ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; memory_to_writeBack_REGFILE_WRITE_VALID     ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; memory_to_writeBack_INSTRUCTION[9]          ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; IBusCachedPlugin_cache|_zz_10_[24]          ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; IBusCachedPlugin_cache|_zz_10_[23]          ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; IBusCachedPlugin_cache|_zz_10_[21]          ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; IBusCachedPlugin_cache|_zz_10_[20]          ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; IBusCachedPlugin_cache|_zz_10_[22]          ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; execute_to_memory_INSTRUCTION[11]           ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; execute_to_memory_INSTRUCTION[10]           ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; execute_to_memory_INSTRUCTION[8]            ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; execute_to_memory_INSTRUCTION[7]            ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; execute_to_memory_INSTRUCTION[9]            ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; execute_to_memory_REGFILE_WRITE_VALID       ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; execute_to_memory_BYPASSABLE_MEMORY_STAGE   ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; writeBack_arbitration_isValid               ; decode_to_execute_RS2[22]                            ; 0.082             ;
+; decode_to_execute_INSTRUCTION[10]           ; execute_to_memory_INSTRUCTION[10]                    ; 0.079             ;
+; CsrPlugin_mtval[10]                         ; CsrPlugin_mepc[10]                                   ; 0.076             ;
+; CsrPlugin_mepc[10]                          ; CsrPlugin_mepc[10]                                   ; 0.076             ;
+; MmuPlugin_satp_ppn[10]                      ; CsrPlugin_mepc[10]                                   ; 0.076             ;
+; decode_to_execute_INSTRUCTION[8]            ; decode_to_execute_RS2[22]                            ; 0.075             ;
+; decode_to_execute_INSTRUCTION[7]            ; decode_to_execute_RS2[22]                            ; 0.075             ;
+; decode_to_execute_REGFILE_WRITE_VALID       ; decode_to_execute_RS2[22]                            ; 0.075             ;
+; decode_to_execute_BYPASSABLE_EXECUTE_STAGE  ; decode_to_execute_RS2[22]                            ; 0.075             ;
+; execute_arbitration_isValid                 ; decode_to_execute_RS2[22]                            ; 0.075             ;
+; execute_to_memory_REGFILE_WRITE_DATA[21]    ; MmuPlugin_shared_vpn_0[9]                            ; 0.068             ;
+; _zz_132_[1]                                 ; decode_to_execute_RS2[22]                            ; 0.067             ;
+; _zz_132_[0]                                 ; decode_to_execute_RS2[22]                            ; 0.067             ;
+; _zz_131_                                    ; decode_to_execute_RS2[22]                            ; 0.067             ;
+; _zz_132_[3]                                 ; decode_to_execute_RS2[22]                            ; 0.067             ;
+; _zz_132_[2]                                 ; decode_to_execute_RS2[22]                            ; 0.067             ;
+; _zz_132_[4]                                 ; decode_to_execute_RS2[22]                            ; 0.067             ;
+; decode_to_execute_PREDICTION_CONTEXT_hazard ; execute_to_memory_PREDICTION_CONTEXT_hazard          ; 0.063             ;
+; decode_to_execute_INSTRUCTION[28]           ; execute_to_memory_INSTRUCTION[28]                    ; 0.060             ;
+; decode_to_execute_SRC1_CTRL[0]              ; dataCache_1_|stage0_colisions_regNextWhen[0]~LRTM_13 ; 0.060             ;
+; CsrPlugin_mtval[16]                         ; CsrPlugin_mepc[16]                                   ; 0.059             ;
+; CsrPlugin_mepc[16]                          ; CsrPlugin_mepc[16]                                   ; 0.059             ;
++---------------------------------------------+------------------------------------------------------+-------------------+
+Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
+
+
+--------------------------------------
+; Global Router Wire Utilization Map ;
+--------------------------------------
+This report is unavailable in plain text report export.
+
+
++-------------------------------------------------------------------------------+
+; Peak Wire Demand Summary                                                      ;
++-----------------+-----------+-----------------------------------+-------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ;
++-----------------+-----------+-----------------------------------+-------------+
+; short           ; right     ; [(104, 72), (111, 79)]            ; 10.378 %    ;
+; short           ; left      ; [(112, 72), (119, 79)]            ; 10.016 %    ;
+; short           ; up        ; [(112, 72), (119, 79)]            ; 38.283 %    ;
+; short           ; down      ; [(112, 80), (119, 87)]            ; 45.708 %    ;
+; long high speed ; right     ; [(104, 72), (111, 79)]            ; 32.812 %    ;
+; long high speed ; left      ; [(112, 80), (119, 87)]            ; 78.571 %    ;
+; long high speed ; up        ; [(104, 72), (111, 79)]            ; 100.000 %   ;
+; long high speed ; down      ; [(104, 80), (111, 87)]            ; 100.000 %   ;
++-----------------+-----------+-----------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Peak Wire Demand Details                                                                                                                                ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------------------------------------------------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names                                                               ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------------------------------------------------------+
+; short           ; right     ; [(104, 72), (111, 79)]            ; 10.378 %    ;    High Routing Fan-Out                                                 ;
+;     --          ;           ;                                   ;             ; memory_arbitration_isStuck~0                                            ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2                                  ;
+;     --          ;           ;                                   ;             ; dataCache_1_|stageB_mmuRsp_isIoAccess                                   ;
+;     --          ;           ;                                   ;             ; _zz_52_[0]~21                                                           ;
+;     --          ;           ;                                   ;             ; _zz_52_[0]~39                                                           ;
+;     --          ;           ;                                   ;             ; memory_to_writeBack_INSTRUCTION[14]                                     ;
+;     --          ;           ;                                   ;             ; Mux_1831~0                                                              ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_cpu_writeBack_accessError~0xsyn                         ;
+;     --          ;           ;                                   ;             ; execute_RS2[7]                                                          ;
+;     --          ;           ;                                   ;             ; i19753~1                                                                ;
+; short           ; right     ; [(104, 72), (111, 79)]            ; 10.378 %    ;    Long Distance                                                        ;
+;     --          ;           ;                                   ;             ; memory_arbitration_isStuck~0                                            ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_cpu_writeBack_accessError~0                             ;
+;     --          ;           ;                                   ;             ; dataCache_1_|_zz_13_~1xsyn                                              ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2                                  ;
+;     --          ;           ;                                   ;             ; MmuPlugin_shared_pteBuffer_PPN0[8]                                      ;
+;     --          ;           ;                                   ;             ; _zz_52_[0]~1                                                            ;
+;     --          ;           ;                                   ;             ; execute_to_memory_MUL_LL[2]                                             ;
+;     --          ;           ;                                   ;             ; softwareInterrupt                                                       ;
+;     --          ;           ;                                   ;             ; execute_RS1[21]                                                         ;
+;     --          ;           ;                                   ;             ; MmuPlugin_shared_pteBuffer_PPN0[7]                                      ;
+; short           ; left      ; [(112, 72), (119, 79)]            ; 10.016 %    ;    High Routing Fan-Out                                                 ;
+;     --          ;           ;                                   ;             ; decode_RS2[0]~8                                                         ;
+;     --          ;           ;                                   ;             ; decode_RS1[0]~4xsyn                                                     ;
+;     --          ;           ;                                   ;             ; decode_RS1[0]~5                                                         ;
+;     --          ;           ;                                   ;             ; _zz_233_                                                                ;
+;     --          ;           ;                                   ;             ; execute_arbitration_haltItself~0                                        ;
+;     --          ;           ;                                   ;             ; decode_RS2[0]~4                                                         ;
+;     --          ;           ;                                   ;             ; execute_arbitration_isValid                                             ;
+;     --          ;           ;                                   ;             ; decode_to_execute_ALU_CTRL[1]                                           ;
+;     --          ;           ;                                   ;             ; execute_RS2[2]                                                          ;
+;     --          ;           ;                                   ;             ; execute_RS2[0]                                                          ;
+; short           ; left      ; [(112, 72), (119, 79)]            ; 10.016 %    ;    Long Distance                                                        ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[23]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[25]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[12]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[19]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[21]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[24]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[14]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[11]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[17]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[22]                                                ;
+; short           ; up        ; [(112, 72), (119, 79)]            ; 38.283 %    ;    High Routing Fan-Out                                                 ;
+;     --          ;           ;                                   ;             ; decode_RS1[0]~4xsyn                                                     ;
+;     --          ;           ;                                   ;             ; decode_RS1[0]~5                                                         ;
+;     --          ;           ;                                   ;             ; decode_to_execute_INSTRUCTION[31]                                       ;
+;     --          ;           ;                                   ;             ; execute_arbitration_haltItself~0                                        ;
+;     --          ;           ;                                   ;             ; Mux_1900~28xsyn                                                         ;
+;     --          ;           ;                                   ;             ; reduce_nor_153                                                          ;
+;     --          ;           ;                                   ;             ; decode_RS2[0]~4                                                         ;
+;     --          ;           ;                                   ;             ; IBusCachedPlugin_cache|_zz_10_[31]                                      ;
+;     --          ;           ;                                   ;             ; IBusCachedPlugin_cache|_zz_10_[14]                                      ;
+;     --          ;           ;                                   ;             ; IBusCachedPlugin_cache|_zz_10_[13]                                      ;
+; short           ; up        ; [(112, 72), (119, 79)]            ; 38.283 %    ;    Long Distance                                                        ;
+;     --          ;           ;                                   ;             ; _zz_133_[18]                                                            ;
+;     --          ;           ;                                   ;             ; RegFilePlugin_regFile_rtl_1|auto_generated|altera_syncram_impl1|q_b[11] ;
+;     --          ;           ;                                   ;             ; RegFilePlugin_regFile_rtl_1|auto_generated|altera_syncram_impl1|q_b[10] ;
+;     --          ;           ;                                   ;             ; RegFilePlugin_regFile_rtl_1|auto_generated|altera_syncram_impl1|q_b[9]  ;
+;     --          ;           ;                                   ;             ; RegFilePlugin_regFile_rtl_0|auto_generated|altera_syncram_impl1|q_b[10] ;
+;     --          ;           ;                                   ;             ; softwareInterrupt                                                       ;
+;     --          ;           ;                                   ;             ; MmuPlugin_shared_pteBuffer_PPN0[8]                                      ;
+;     --          ;           ;                                   ;             ; MmuPlugin_shared_pteBuffer_PPN0[1]                                      ;
+;     --          ;           ;                                   ;             ; dataCache_1_|stageA_request_wr                                          ;
+;     --          ;           ;                                   ;             ; RegFilePlugin_regFile_rtl_1|auto_generated|altera_syncram_impl1|q_b[1]  ;
+; short           ; down      ; [(112, 80), (119, 87)]            ; 45.708 %    ;    High Routing Fan-Out                                                 ;
+;     --          ;           ;                                   ;             ; decode_to_execute_INSTRUCTION[12]                                       ;
+;     --          ;           ;                                   ;             ; decode_to_execute_SRC1_CTRL[1]                                          ;
+;     --          ;           ;                                   ;             ; _zz_185_[2]~0                                                           ;
+;     --          ;           ;                                   ;             ; decode_to_execute_INSTRUCTION[13]                                       ;
+;     --          ;           ;                                   ;             ; memory_to_writeBack_INSTRUCTION[9]                                      ;
+;     --          ;           ;                                   ;             ; decode_to_execute_SRC2_FORCE_ZERO                                       ;
+;     --          ;           ;                                   ;             ; decode_to_execute_SRC1_CTRL[0]                                          ;
+;     --          ;           ;                                   ;             ; _zz_233_                                                                ;
+;     --          ;           ;                                   ;             ; MmuPlugin_shared_state_1_.001                                           ;
+;     --          ;           ;                                   ;             ; Mux_1900~26xsyn                                                         ;
+; short           ; down      ; [(112, 80), (119, 87)]            ; 45.708 %    ;    Long Distance                                                        ;
+;     --          ;           ;                                   ;             ; _zz_185_[2]~0                                                           ;
+;     --          ;           ;                                   ;             ; decode_to_execute_INSTRUCTION[13]                                       ;
+;     --          ;           ;                                   ;             ; memory_to_writeBack_REGFILE_WRITE_DATA[10]                              ;
+;     --          ;           ;                                   ;             ; execute_RS2[9]                                                          ;
+;     --          ;           ;                                   ;             ; execute_RS2[17]                                                         ;
+;     --          ;           ;                                   ;             ; decode_to_execute_INSTRUCTION[12]                                       ;
+;     --          ;           ;                                   ;             ; execute_to_memory_BRANCH_CALC[20]                                       ;
+;     --          ;           ;                                   ;             ; memory_to_writeBack_PC[27]                                              ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[24]                                                ;
+;     --          ;           ;                                   ;             ; decode_to_execute_PC[21]                                                ;
+; long high speed ; right     ; [(104, 72), (111, 79)]            ; 32.812 %    ;    High Routing Fan-Out                                                 ;
+;     --          ;           ;                                   ;             ; memory_arbitration_isStuck~0                                            ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2                                  ;
+;     --          ;           ;                                   ;             ; reset                                                                   ;
+;     --          ;           ;                                   ;             ; execute_to_memory_INSTRUCTION[13]                                       ;
+;     --          ;           ;                                   ;             ; dBus_rsp_payload_error                                                  ;
+;     --          ;           ;                                   ;             ; dataCache_1_|stageB_mask[2]                                             ;
+;     --          ;           ;                                   ;             ; execute_to_memory_PC[5]                                                 ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_cpu_writeBack_accessError~0                             ;
+;     --          ;           ;                                   ;             ; dataCache_1_|stageB_mask[1]                                             ;
+;     --          ;           ;                                   ;             ; debug_bus_cmd_payload_address[2]                                        ;
+; long high speed ; right     ; [(104, 72), (111, 79)]            ; 32.812 %    ;    Long Distance                                                        ;
+;     --          ;           ;                                   ;             ; dataCache_1_|stageB_mask[2]                                             ;
+;     --          ;           ;                                   ;             ; execute_to_memory_PC[10]                                                ;
+;     --          ;           ;                                   ;             ; debug_bus_cmd_payload_data[14]                                          ;
+;     --          ;           ;                                   ;             ; debug_bus_cmd_payload_data[11]                                          ;
+;     --          ;           ;                                   ;             ; timerInterrupt                                                          ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_mem_cmd_payload_address[5]~3xsyn                        ;
+;     --          ;           ;                                   ;             ; memory_arbitration_isStuck~0                                            ;
+;     --          ;           ;                                   ;             ; dataCache_1_|stageB_request_data[16]                                    ;
+;     --          ;           ;                                   ;             ; memory_to_writeBack_REGFILE_WRITE_DATA[30]                              ;
+;     --          ;           ;                                   ;             ; dataCache_1_|_zz_13_~2                                                  ;
+; long high speed ; left      ; [(112, 80), (119, 87)]            ; 78.571 %    ;    High Routing Fan-Out                                                 ;
+;     --          ;           ;                                   ;             ; _zz_185_[2]~0                                                           ;
+;     --          ;           ;                                   ;             ; execute_RS2[31]                                                         ;
+;     --          ;           ;                                   ;             ; decode_RS1[0]~1                                                         ;
+;     --          ;           ;                                   ;             ; i11180~1                                                                ;
+;     --          ;           ;                                   ;             ; writeBack_arbitration_isValid                                           ;
+;     --          ;           ;                                   ;             ; MmuPlugin_shared_state_1_.010                                           ;
+;     --          ;           ;                                   ;             ; execute_to_memory_IS_DIV                                                ;
+;     --          ;           ;                                   ;             ; execute_to_memory_REGFILE_WRITE_DATA[30]                                ;
+;     --          ;           ;                                   ;             ; execute_to_memory_REGFILE_WRITE_DATA[13]                                ;
+;     --          ;           ;                                   ;             ; execute_to_memory_REGFILE_WRITE_DATA[20]                                ;
+; long high speed ; left      ; [(112, 80), (119, 87)]            ; 78.571 %    ;    Long Distance                                                        ;
+;     --          ;           ;                                   ;             ; dataCache_1_|shift_left_0~0                                             ;
+;     --          ;           ;                                   ;             ; _zz_185_[0]~1                                                           ;
+;     --          ;           ;                                   ;             ; _zz_185_[2]~0                                                           ;
+;     --          ;           ;                                   ;             ; execute_RS2[10]                                                         ;
+;     --          ;           ;                                   ;             ; memory_to_writeBack_REGFILE_WRITE_DATA[10]                              ;
+;     --          ;           ;                                   ;             ; MmuPlugin_shared_portId.1                                               ;
+;     --          ;           ;                                   ;             ; dataCache_1_|shift_left_0~3                                             ;
+;     --          ;           ;                                   ;             ; _zz_33_[0]~52                                                           ;
+;     --          ;           ;                                   ;             ; dataCache_1_|shift_left_0~1                                             ;
+;     --          ;           ;                                   ;             ; _zz_185_[0]~2                                                           ;
+; long high speed ; up        ; [(104, 72), (111, 79)]            ; 100.000 %   ;    High Routing Fan-Out                                                 ;
+;     --          ;           ;                                   ;             ; memory_arbitration_isStuck~0                                            ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2                                  ;
+;     --          ;           ;                                   ;             ; dataCache_1_|_zz_5_~0                                                   ;
+;     --          ;           ;                                   ;             ; dataCache_1_|dataReadCmd_payload[0]~0xsyn                               ;
+;     --          ;           ;                                   ;             ; dataCache_1_|dataReadCmd_payload[0]~1xsyn                               ;
+;     --          ;           ;                                   ;             ; dataCache_1_|dataReadCmd_payload[0]~2xsyn                               ;
+;     --          ;           ;                                   ;             ; dataCache_1_|dataReadCmd_payload[0]~3xsyn                               ;
+;     --          ;           ;                                   ;             ; dataCache_1_|dataReadCmd_payload[0]~4xsyn                               ;
+;     --          ;           ;                                   ;             ; dataCache_1_|dataReadCmd_payload[0]~5xsyn                               ;
+;     --          ;           ;                                   ;             ; dataCache_1_|dataReadCmd_payload[0]~6xsyn                               ;
+; long high speed ; up        ; [(104, 72), (111, 79)]            ; 100.000 %   ;    Long Distance                                                        ;
+;     --          ;           ;                                   ;             ; memory_arbitration_isStuck~0                                            ;
+;     --          ;           ;                                   ;             ; dataCache_1_|_zz_13_~1xsyn                                              ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2                                  ;
+;     --          ;           ;                                   ;             ; add_14~11                                                               ;
+;     --          ;           ;                                   ;             ; MmuPlugin_shared_pteBuffer_PPN0[9]                                      ;
+;     --          ;           ;                                   ;             ; MmuPlugin_shared_pteBuffer_PPN0[3]                                      ;
+;     --          ;           ;                                   ;             ; MmuPlugin_ports_0_cacheHits_3~1                                         ;
+;     --          ;           ;                                   ;             ; _zz_52_[0]~1                                                            ;
+;     --          ;           ;                                   ;             ; i19753~1                                                                ;
+;     --          ;           ;                                   ;             ; decode_RS1[0]~5                                                         ;
+; long high speed ; down      ; [(104, 80), (111, 87)]            ; 100.000 %   ;    High Routing Fan-Out                                                 ;
+;     --          ;           ;                                   ;             ; decode_to_execute_INSTRUCTION[12]                                       ;
+;     --          ;           ;                                   ;             ; i8957                                                                   ;
+;     --          ;           ;                                   ;             ; _zz_103_[1]~2xsyn                                                       ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_mem_cmd_payload_address[5]~3                            ;
+;     --          ;           ;                                   ;             ; execute_RS1[31]                                                         ;
+;     --          ;           ;                                   ;             ; reduce_nor_92                                                           ;
+;     --          ;           ;                                   ;             ; _zz_34_[0]~0                                                            ;
+;     --          ;           ;                                   ;             ; dataCache_1_|loader_counter_willOverflow~0                              ;
+;     --          ;           ;                                   ;             ; _zz_103_[2]~3                                                           ;
+;     --          ;           ;                                   ;             ; _zz_103_[0]~1                                                           ;
+; long high speed ; down      ; [(104, 80), (111, 87)]            ; 100.000 %   ;    Long Distance                                                        ;
+;     --          ;           ;                                   ;             ; decode_to_execute_INSTRUCTION[12]                                       ;
+;     --          ;           ;                                   ;             ; i8957                                                                   ;
+;     --          ;           ;                                   ;             ; i11746~0                                                                ;
+;     --          ;           ;                                   ;             ; _zz_33_[0]~81xsyn_202                                                   ;
+;     --          ;           ;                                   ;             ; _zz_33_[0]~65                                                           ;
+;     --          ;           ;                                   ;             ; execute_arbitration_isStuck~0                                           ;
+;     --          ;           ;                                   ;             ; _zz_52_[0]~93                                                           ;
+;     --          ;           ;                                   ;             ; i17739                                                                  ;
+;     --          ;           ;                                   ;             ; dataCache_1_|io_cpu_redo~0                                              ;
+;     --          ;           ;                                   ;             ; dataCache_1_|stageB_mmuRsp_physicalAddress[0]~LRTM                      ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Peak Total Grid Crossings                                           ;
++----------------------------------------------+----------------------+
+; Net Name                                     ; Total Grid Crossings ;
++----------------------------------------------+----------------------+
+; memory_arbitration_isStuck~0                 ; 9                    ;
+; _zz_185_[2]~0                                ; 8                    ;
+; execute_RS2[0]                               ; 8                    ;
+; dataCache_1_|io_cpu_writeBack_haltIt~2       ; 8                    ;
+; decode_RS1[0]~1                              ; 7                    ;
+; memory_arbitration_isValid                   ; 7                    ;
+; Mux_1842~2                                   ; 6                    ;
+; execute_to_memory_REGFILE_WRITE_DATA[29]     ; 6                    ;
+; Mux_1841~2                                   ; 6                    ;
+; decode_to_execute_BRANCH_CTRL[0]             ; 6                    ;
+; decode_to_execute_INSTRUCTION[12]            ; 6                    ;
+; execute_arbitration_isStuck~1xsyn            ; 6                    ;
+; reset                                        ; 6                    ;
+; execute_RS2[29]                              ; 6                    ;
+; execute_RS2[28]                              ; 6                    ;
+; execute_RS2[27]                              ; 6                    ;
+; execute_RS2[26]                              ; 6                    ;
+; execute_RS2[25]                              ; 6                    ;
+; execute_RS2[24]                              ; 6                    ;
+; execute_RS2[23]                              ; 6                    ;
+; execute_RS2[20]                              ; 6                    ;
+; execute_RS2[19]                              ; 6                    ;
+; execute_RS2[2]                               ; 6                    ;
+; memory_to_writeBack_REGFILE_WRITE_DATA[10]   ; 5                    ;
+; dataCache_1_|io_cpu_writeBack_accessError~0  ; 5                    ;
+; dataCache_1_|_zz_13_~1xsyn                   ; 5                    ;
+; MmuPlugin_shared_state_1_.000                ; 5                    ;
+; execute_CsrPlugin_readToWriteData[0]~19      ; 5                    ;
+; execute_to_memory_REGFILE_WRITE_DATA[26]     ; 5                    ;
+; dataCache_1_|io_mem_cmd_payload_address[5]~3 ; 5                    ;
+; execute_to_memory_REGFILE_WRITE_DATA[31]     ; 5                    ;
+; execute_to_memory_REGFILE_WRITE_DATA[2]      ; 5                    ;
+; i17957~2                                     ; 5                    ;
+; i17739                                       ; 5                    ;
+; decode_to_execute_BRANCH_CTRL[1]             ; 5                    ;
+; Mux_1900~0                                   ; 5                    ;
+; i16847~1                                     ; 5                    ;
+; i16847~2                                     ; 5                    ;
+; i16847~4                                     ; 5                    ;
+; IBusCachedPlugin_cache|_zz_10_[26]           ; 5                    ;
+; IBusCachedPlugin_cache|_zz_10_[27]           ; 5                    ;
+; decode_to_execute_ALU_CTRL[0]                ; 5                    ;
+; execute_to_memory_REGFILE_WRITE_DATA[24]     ; 5                    ;
+; decode_to_execute_INSTRUCTION[13]            ; 5                    ;
+; Select_136~0                                 ; 5                    ;
+; execute_arbitration_isValid                  ; 5                    ;
+; execute_arbitration_removeIt~0               ; 5                    ;
+; CsrPlugin_pipelineLiberator_active~1         ; 5                    ;
+; contextSwitching~0xsyn                       ; 5                    ;
+; writeBack_arbitration_isValid                ; 5                    ;
++----------------------------------------------+----------------------+
+
+

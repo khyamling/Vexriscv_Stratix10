@@ -1,0 +1,18 @@
+with HyperFlex retiming
+Perfomance-High performance effort
+Register Optimization-Allow register Retiming
+Advanced Settings(Synthesis)-Optimization Technique:speed
+                             Synchronization Register Chain Length:1
+Advanced Setting(Fitter)- Allow DSP Retiming: Yes
+                          Allow RAM Retiming: Yes
+                          Auto Delay chains for High Fanout Input Pins: Yes
+
+ALUTs:2222
+Fmax:291.46MHz
+create_clock -name clk -period 3.5 -waveform {0.000 1.750} [get_ports clk]
+
+without HyperFlex retiming 
+Register Optimization-No Allow register Retiming
+ALUTs:2222
+Fmax:271.44MHz
+create_clock -name clk -period 3.7 -waveform {0.000 1.800} [get_ports clk]

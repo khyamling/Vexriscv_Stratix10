@@ -1,0 +1,184 @@
+Design Assistant report for vexrisc_full
+Fri Feb 26 15:46:21 2021
+Quartus Prime Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant Results - 0 of 12 Rules Failed
+  3. HRR-10003 - Registers on High Fan-Out Non-Global Nets (Deprecated)
+  4. FLP-40001 - Congested Placement Region
+  5. FLP-40002 - Very Small Routing Regions
+  6. FLP-40003 - Narrow Region
+  7. HRR-10004 - High Fan-out Non-Global Nets (Deprecated)
+  8. TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint
+  9. TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication
+ 10. TMC-20552 - User Selected Duplication Candidate was Rejected
+ 11. TMC-20601 - Registers with High Immediate Fan-Out Tension
+ 12. TMC-20602 - Registers with High Timing Path Endpoint Tension
+ 13. TMC-20603 - Registers with High Immediate Fan-Out Span
+ 14. TMC-20604 - Registers with High Timing Path Endpoint Span
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Design Assistant Results - 0 of 12 Rules Failed                                                                    ;
++--------------------------------------------------------------------------------------------+----------+------------+
+; Rule                                                                                       ; Severity ; Violations ;
++--------------------------------------------------------------------------------------------+----------+------------+
+; HRR-10003 - Registers on High Fan-Out Non-Global Nets (Deprecated)                         ; Medium   ; 0          ;
+; FLP-40001 - Congested Placement Region                                                     ; Low      ; 0          ;
+; FLP-40002 - Very Small Routing Regions                                                     ; Low      ; 0          ;
+; FLP-40003 - Narrow Region                                                                  ; Low      ; 0          ;
+; HRR-10004 - High Fan-out Non-Global Nets (Deprecated)                                      ; Low      ; 0          ;
+; TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint ; Low      ; 0          ;
+; TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication  ; Low      ; 0          ;
+; TMC-20552 - User Selected Duplication Candidate was Rejected                               ; Low      ; 0          ;
+; TMC-20601 - Registers with High Immediate Fan-Out Tension                                  ; Low      ; 0          ;
+; TMC-20602 - Registers with High Timing Path Endpoint Tension                               ; Low      ; 0          ;
+; TMC-20603 - Registers with High Immediate Fan-Out Span                                     ; Low      ; 0          ;
+; TMC-20604 - Registers with High Timing Path Endpoint Span                                  ; Low      ; 0          ;
++--------------------------------------------------------------------------------------------+----------+------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------+
+; HRR-10003 - Registers on High Fan-Out Non-Global Nets (Deprecated) ;
++--------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		region_placement_threshold = 70
++----------------------------------------+
+; FLP-40001 - Congested Placement Region ;
++----------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		min_dimension = 4
++----------------------------------------+
+; FLP-40002 - Very Small Routing Regions ;
++----------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		region_aspect_ratio = 0.6
++---------------------------+
+; FLP-40003 - Narrow Region ;
++---------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		fanout = 10000
++-------------------------------------------------------+
+; HRR-10004 - High Fan-out Non-Global Nets (Deprecated) ;
++-------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------------------------+
+; TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint ;
++--------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		avg_dup_fanout = 1000
++-------------------------------------------------------------------------------------------+
+; TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication ;
++-------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------+
+; TMC-20552 - User Selected Duplication Candidate was Rejected ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		tension = 100000
++-----------------------------------------------------------+
+; TMC-20601 - Registers with High Immediate Fan-Out Tension ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		tension = 100000
+		ignore_high_fanout_tension = "false"
++--------------------------------------------------------------+
+; TMC-20602 - Registers with High Timing Path Endpoint Tension ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		span = 250
++--------------------------------------------------------+
+; TMC-20603 - Registers with High Immediate Fan-Out Span ;
++--------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		span = 250
+		ignore_high_fanout_span = "false"
++-----------------------------------------------------------+
+; TMC-20604 - Registers with High Timing Path Endpoint Span ;
++-----------------------------------------------------------+
+
+

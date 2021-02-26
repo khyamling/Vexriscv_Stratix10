@@ -1,0 +1,168 @@
+Design Assistant report for vexrisc_full
+Fri Feb 26 15:35:16 2021
+Quartus Prime Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Elaborated) Results - 3 of 8 Rules Failed
+  3. RES-10204 - Reset Release Instance Count Check
+  4. TMC-20050 - RAM Control Signals Driven by LUTs or ALMs instead of DFFs
+  5. RES-50005 - RAM Control Signals Driven by Flip-Flops with Asynchronous Clears
+  6. RES-10202 - Register Power-Up Settings Conflict with Device Settings
+  7. FLP-10100 - Large Multipliers are Decomposed
+  8. RES-10201 - Power Up Don't Care Setting May Prevent Retiming
+  9. TMC-10115 - High Fan-out Signal
+ 10. TMC-20051 - RAM Control Signals Driven by High Fan-Out Net
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Design Assistant (Elaborated) Results - 3 of 8 Rules Failed                                           ;
++-------------------------------------------------------------------------------+----------+------------+
+; Rule                                                                          ; Severity ; Violations ;
++-------------------------------------------------------------------------------+----------+------------+
+; RES-10204 - Reset Release Instance Count Check                                ; High     ; 1          ;
+; TMC-20050 - RAM Control Signals Driven by LUTs or ALMs instead of DFFs        ; Low      ; 24         ;
+; RES-50005 - RAM Control Signals Driven by Flip-Flops with Asynchronous Clears ; Low      ; 2          ;
+; RES-10202 - Register Power-Up Settings Conflict with Device Settings          ; High     ; 0          ;
+; FLP-10100 - Large Multipliers are Decomposed                                  ; Low      ; 0          ;
+; RES-10201 - Power Up Don't Care Setting May Prevent Retiming                  ; Low      ; 0          ;
+; TMC-10115 - High Fan-out Signal                                               ; Low      ; 0          ;
+; TMC-20051 - RAM Control Signals Driven by High Fan-Out Net                    ; Low      ; 0          ;
++-------------------------------------------------------------------------------+----------+------------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	1
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------------------------+
+; RES-10204 - Reset Release Instance Count Check                       ;
++-------+--------------------------------------------------------------+
+; Count ; Path                                                         ;
++-------+--------------------------------------------------------------+
+; 0     ; No reset release IP detected in project, exactly 1 required. ;
++-------+--------------------------------------------------------------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	24
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------------------------------------------+
+; TMC-20050 - RAM Control Signals Driven by LUTs or ALMs instead of DFFs                                       ;
++-------------------------------------------+------------------------------------------------------------------+
+; Pin                                       ; Signal                                                           ;
++-------------------------------------------+------------------------------------------------------------------+
+; IBusCachedPlugin_cache|ways_0_datas|RADDR ; IBusCachedPlugin_fetchPc_output_payload[2]                       ;
+; IBusCachedPlugin_cache|ways_0_tags|RADDR  ; IBusCachedPlugin_fetchPc_output_payload[5]                       ;
+; IBusCachedPlugin_cache|ways_0_tags|WADDR  ; IBusCachedPlugin_cache|lineLoader_write_tag_0_payload_address[0] ;
+; IBusCachedPlugin_cache|ways_0_tags|WE     ; IBusCachedPlugin_cache|_zz_2_                                    ;
+; RegFilePlugin_regFile|PORTBRADDR          ; decode_RegFilePlugin_regFileReadAddress2[0]                      ;
+; RegFilePlugin_regFile|RADDR               ; decode_RegFilePlugin_regFileReadAddress1[0]                      ;
+; RegFilePlugin_regFile|WE                  ; _zz_44_                                                          ;
+; _zz_74_|RADDR                             ; IBusCachedPlugin_fetchPc_output_payload[2]                       ;
+; _zz_74_|WE                                ; _zz_75_                                                          ;
+; dataCache_1_|ways_0_data_symbol0|RADDR    ; dataCache_1_|dataReadCmd_payload[0]                              ;
+; dataCache_1_|ways_0_data_symbol0|WADDR    ; dataCache_1_|dataWriteCmd_payload_address[0]                     ;
+; dataCache_1_|ways_0_data_symbol0|WE       ; dataCache_1_|i195                                                ;
+; dataCache_1_|ways_0_data_symbol1|RADDR    ; dataCache_1_|dataReadCmd_payload[0]                              ;
+; dataCache_1_|ways_0_data_symbol1|WADDR    ; dataCache_1_|dataWriteCmd_payload_address[0]                     ;
+; dataCache_1_|ways_0_data_symbol1|WE       ; dataCache_1_|i196                                                ;
+; dataCache_1_|ways_0_data_symbol2|RADDR    ; dataCache_1_|dataReadCmd_payload[0]                              ;
+; dataCache_1_|ways_0_data_symbol2|WADDR    ; dataCache_1_|dataWriteCmd_payload_address[0]                     ;
+; dataCache_1_|ways_0_data_symbol2|WE       ; dataCache_1_|i197                                                ;
+; dataCache_1_|ways_0_data_symbol3|RADDR    ; dataCache_1_|dataReadCmd_payload[0]                              ;
+; dataCache_1_|ways_0_data_symbol3|WADDR    ; dataCache_1_|dataWriteCmd_payload_address[0]                     ;
+; dataCache_1_|ways_0_data_symbol3|WE       ; dataCache_1_|i198                                                ;
+; dataCache_1_|ways_0_tags|RADDR            ; dataCache_1_|dataReadCmd_payload[3]                              ;
+; dataCache_1_|ways_0_tags|WADDR            ; dataCache_1_|tagsWriteCmd_payload_address[0]                     ;
+; dataCache_1_|ways_0_tags|WE               ; dataCache_1_|_zz_2_                                              ;
++-------------------------------------------+------------------------------------------------------------------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	2
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------------------------+
+; RES-50005 - RAM Control Signals Driven by Flip-Flops with Asynchronous Clears              ;
++-------------------------------------------+------------------------------------------------+
+; Pin                                       ; Signal                                         ;
++-------------------------------------------+------------------------------------------------+
+; IBusCachedPlugin_cache|ways_0_datas|WADDR ; IBusCachedPlugin_cache|lineLoader_wordIndex[0] ;
+; RegFilePlugin_regFile|WADDR               ; memory_to_writeBack_INSTRUCTION[7]             ;
++-------------------------------------------+------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------------------------+
+; RES-10202 - Register Power-Up Settings Conflict with Device Settings ;
++----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------+
+; FLP-10100 - Large Multipliers are Decomposed ;
++----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------+
+; RES-10201 - Power Up Don't Care Setting May Prevent Retiming ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		fanout = 50000
+		driver_name_filter = ""
++---------------------------------+
+; TMC-10115 - High Fan-out Signal ;
++---------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		RAM_Inference_HFN_Threshold = 2000
++------------------------------------------------------------+
+; TMC-20051 - RAM Control Signals Driven by High Fan-Out Net ;
++------------------------------------------------------------+
+
+

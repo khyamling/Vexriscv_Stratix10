@@ -1,0 +1,455 @@
+Fitter Fastforward Stage Report for vexrisc_full
+Fri Feb 26 16:01:47 2021
+Quartus Prime Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Summary
+  3. Settings
+  4. Clock Fmax Summary
+  5. Clock Worst-Case Slack Summary
+  6. Fast Forward Summary for Clock Domain clk
+  7. Critical Chain for Base Result
+  8. Optimizations Analyzed for Fast Forward Step 1 (298 MHz)
+  9. Optimizations Analyzed for Fast Forward Step 2 (301 MHz)
+ 10. Critical Chain at Fast Forward Limit
+ 11. Fastforward Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------+
+; Summary                                                            ;
++-----------------------+--------------------------------------------+
+; Fast Forward Status   ; Successful - Fri Feb 26 16:01:47 2021      ;
+; Quartus Prime Version ; 20.3.0 Build 158 09/24/2020 SC Pro Edition ;
+; Revision Name         ; vexrisc_full                               ;
+; Top-level Entity Name ; vexrisc_full                               ;
+; Family                ; Stratix 10                                 ;
+; Device                ; 1SX065HH1F35E1VG                           ;
++-----------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Settings                                                                                          ;
++-------------------------------------------------------------------------+---------+---------------+
+; Option                                                                  ; Setting ; Default Value ;
++-------------------------------------------------------------------------+---------+---------------+
+; Enable Hyper-Retimer Fast Forward analysis during compilation           ; On      ; Off           ;
+; Enable Hyper-Retimer Fast Forward Hierarchy analysis during compilation ; On      ; On            ;
+; Fast Forward Compile Cut All Clock Transfers                            ; On      ; On            ;
+; Fast Forward Compile Maximum Additional Pipeline Stages                 ; -1      ; -1            ;
+; Fast Forward Compile Asynchronous Clears                                ; Auto    ; Auto          ;
+; Fast Forward Compile User Preserve Directives                           ; Auto    ; Auto          ;
+; Fast Forward Compile Fully Register DSP blocks                          ; On      ; On            ;
+; Fast Forward Compile Fully Register RAM blocks                          ; On      ; On            ;
+; Enable Critical Chain Viewer                                            ; On      ; On            ;
++-------------------------------------------------------------------------+---------+---------------+
+To turn on Fast Forward analysis during Quartus compilation, edit the setting in the HyperFlex settings menu in the Quartus GUI or set_global_assignment -name FLOW_ENABLE_HYPER_RETIMER_FAST_FORWARD ON in your QSF
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Fmax Summary                                                                                                                        ;
++------------+---------+------------------------------+--------------------------------+----------------------------------+-----------------+
+; Clock Name ; Fmax    ; Achieved with Hyper-Retiming ; Achieved with Hyper-Pipelining ; Achieved with Hyper-Optimization ; Restricted Fmax ;
++------------+---------+------------------------------+--------------------------------+----------------------------------+-----------------+
+; clk        ; 292 MHz ; 301 MHz                      ; 301 MHz                        ; 301 MHz                          ; 301 MHz         ;
++------------+---------+------------------------------+--------------------------------+----------------------------------+-----------------+
+Fast Forward Compilation enabled: Post-place & route results are analyzed to provide step-by-step recommendations for suggested RTL changes and show the estimated performance improvement from making these changes
+- Fmax/Slack: Estimated performance from retiming existing registers in the design
+- Relationship: Timing relationship between launch and latch clock edge
+- Achieved with Hyper-Retiming: Estimated performance from analyzing optimizations to remove restrictions that prevent registers from retiming
+- Achieved with Hyper-Pipelining: Estimated performance from analyzing optimizations to add new registers to the design to pipeline paths better
+- Achieved with Hyper-Optimization: Estimated performance from analyzing optimizations to further improve the design
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Worst-Case Slack Summary                                                                                                             ;
++------------+----------------------------+------------------------------+--------------------------------+----------------------------------+
+; Clock Name ; Slack                      ; Achieved with Hyper-Retiming ; Achieved with Hyper-Pipelining ; Achieved with Hyper-Optimization ;
++------------+----------------------------+------------------------------+--------------------------------+----------------------------------+
+; clk        ; 0.074 (3.500 Relationship) ; 0.178 (3.500 Relationship)   ; 0.178 (3.500 Relationship)     ; 0.178 (3.500 Relationship)       ;
++------------+----------------------------+------------------------------+--------------------------------+----------------------------------+
+Fast Forward Compilation enabled: Post-place & route results are analyzed to provide step-by-step recommendations for suggested RTL changes and show the estimated performance improvement from making these changes
+- Fmax/Slack: Estimated performance from retiming existing registers in the design
+- Relationship: Timing relationship between launch and latch clock edge
+- Achieved with Hyper-Retiming: Estimated performance from analyzing optimizations to remove restrictions that prevent registers from retiming
+- Achieved with Hyper-Pipelining: Estimated performance from analyzing optimizations to add new registers to the design to pipeline paths better
+- Achieved with Hyper-Optimization: Estimated performance from analyzing optimizations to further improve the design
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Forward Summary for Clock Domain clk                                                                                                                                ;
++---------------------------------------+------------------------------------------------------------------------------------------+----------------+-------+--------------+
+; Step                                  ; Fast Forward Optimizations Analyzed                                                      ; Estimated Fmax ; Slack ; Relationship ;
++---------------------------------------+------------------------------------------------------------------------------------------+----------------+-------+--------------+
+; Base Performance                      ; None                                                                                     ; 292 MHz        ; 0.074 ; 3.500        ;
+; Fast Forward Step #1 (Hyper-Retiming) ; Removed asynchronous clears on 7 Registers                                               ; 298 MHz        ; 0.139 ; 3.500        ;
+; Fast Forward Step #2 (Hyper-Retiming) ; Removed asynchronous clears on 1 Register                                                ; 301 MHz        ; 0.178 ; 3.500        ;
+;                                       ; Set Netlist Optimization setting 'Always Allow' for 64 Primitive Cells to allow retiming ;                ;       ;              ;
+; Fast Forward Limit                    ; Performance Limited by: Insufficient Registers                                           ; --             ; --    ; --           ;
++---------------------------------------+------------------------------------------------------------------------------------------+----------------+-------+--------------+
+
+
+Critical Chain for Base Result
+===============================================================================
++--------------------------------------------------------------------+
+; Critical Chain for Base Result                                     ;
++--------------------------------------------------------------------+
+; Critical Chain for Base Result                                     ;
++--------------------------------------------------------------------+
+; See 'Retiming Limit Details' results in Fitter Retime Stage folder ;
++--------------------------------------------------------------------+
+
+
+
+Optimizations Analyzed for Fast Forward Step 1 (298 MHz)
+===============================================================================
++----------------------------------------------------------------------------------+
+; Optimizations Analyzed (Cumulative)                                              ;
++----------------------------------------------------------------------------------+
+; Optimizations Analyzed (Cumulative)                                              ;
++----------------------------------------------------------------------------------+
+; Removed asynchronous clears on 7 Registers (1 Domain)                            ;
+;  Removed asynchronous clears on 7 Registers in Clock Domain 'clk' (1 Entity)     ;
+;   Removed asynchronous clears on 7 Registers in Entity vexrisc_full (1 Instance) ;
+;    Removed asynchronous clears on 7 Registers in Instance                        ;
+;     Removed asynchronous clears on bus CsrPlugin_mstatus_MPP (2 signals)         ;
+;     Removed asynchronous clears on MmuPlugin_shared_state_1_.011~LRTM_2          ;
+;     Removed asynchronous clears on MmuPlugin_shared_state_1_.011~LRTM_4          ;
+;     Removed asynchronous clears on execute_to_memory_IS_DBUS_SHARING             ;
+;     Removed asynchronous clears on memory_arbitration_isValid                    ;
+;     Removed asynchronous clears on writeBack_arbitration_isValid                 ;
++----------------------------------------------------------------------------------+
+
+
+
+Optimizations Analyzed for Fast Forward Step 2 (301 MHz)
+===============================================================================
++--------------------------------------------------------------------------------------------------------------------------------+
+; Optimizations Analyzed (for Fast Forward Step #2)                                                                              ;
++--------------------------------------------------------------------------------------------------------------------------------+
+; Optimizations Analyzed (for Fast Forward Step #2)                                                                              ;
++--------------------------------------------------------------------------------------------------------------------------------+
+; Removed asynchronous clears on 1 Register (1 Domain)                                                                           ;
+;  Removed asynchronous clears on 1 Register in Clock Domain 'clk' (1 Entity)                                                    ;
+;   Removed asynchronous clears on 1 Register in Entity vexrisc_full (1 Instance)                                                ;
+;    Removed asynchronous clears on 1 Register in Instance                                                                       ;
+;     Removed asynchronous clears on MmuPlugin_ports_0_cache_2_valid                                                             ;
+; Set Netlist Optimization setting 'Always Allow' for 64 Primitive Cells to allow retiming (1 Domain)                            ;
+;  Set Netlist Optimization setting 'Always Allow' for 64 Primitive Cells to allow retiming in Clock Domain 'clk' (1 Entity)     ;
+;   Set Netlist Optimization setting 'Always Allow' for 64 Primitive Cells to allow retiming in Entity vexrisc_full (1 Instance) ;
+;    Set Netlist Optimization setting 'Always Allow' for 64 Primitive Cells to allow retiming in Instance                        ;
+;     Set Netlist Optimization setting 'Always Allow' for bus execute_RS1 (32 signals) to allow retiming                         ;
+;     Set Netlist Optimization setting 'Always Allow' for bus execute_RS2 (32 signals) to allow retiming                         ;
++--------------------------------------------------------------------------------------------------------------------------------+
+
+
+
+Critical Chain at Fast Forward Limit
+===============================================================================
++--------------------------------------------------------------------------------------------------------------------------------+
+; Optimizations Analyzed (Cumulative)                                                                                            ;
++--------------------------------------------------------------------------------------------------------------------------------+
+; Optimizations Analyzed (Cumulative)                                                                                            ;
++--------------------------------------------------------------------------------------------------------------------------------+
+; Removed asynchronous clears on 41 Registers (1 Domain)                                                                         ;
+;  Removed asynchronous clears on 41 Registers in Clock Domain 'clk' (1 Entity)                                                  ;
+;   Removed asynchronous clears on 41 Registers in Entity vexrisc_full (1 Instance)                                              ;
+;    Removed asynchronous clears on 41 Registers in Instance                                                                     ;
+;     Removed asynchronous clears on bus CsrPlugin_mstatus_MPP (2 signals)                                                       ;
+;     Removed asynchronous clears on MmuPlugin_ports_0_cache_2_valid                                                             ;
+;     Removed asynchronous clears on MmuPlugin_ports_0_cache_3_valid                                                             ;
+;     Removed asynchronous clears on MmuPlugin_shared_state_1_.011~LRTM_2                                                        ;
+;     Removed asynchronous clears on MmuPlugin_shared_state_1_.011~LRTM_4                                                        ;
+;     Removed asynchronous clears on execute_to_memory_IS_DBUS_SHARING                                                           ;
+;     Removed asynchronous clears on memory_arbitration_isValid                                                                  ;
+;     Removed asynchronous clears on bus memory_to_writeBack_INSTRUCTION (32 signals)                                            ;
+;     Removed asynchronous clears on writeBack_arbitration_isValid                                                               ;
+; Set Netlist Optimization setting 'Always Allow' for 64 Primitive Cells to allow retiming (1 Domain)                            ;
+;  Set Netlist Optimization setting 'Always Allow' for 64 Primitive Cells to allow retiming in Clock Domain 'clk' (1 Entity)     ;
+;   Set Netlist Optimization setting 'Always Allow' for 64 Primitive Cells to allow retiming in Entity vexrisc_full (1 Instance) ;
+;    Set Netlist Optimization setting 'Always Allow' for 64 Primitive Cells to allow retiming in Instance                        ;
+;     Set Netlist Optimization setting 'Always Allow' for bus execute_RS1 (32 signals) to allow retiming                         ;
+;     Set Netlist Optimization setting 'Always Allow' for bus execute_RS2 (32 signals) to allow retiming                         ;
+; Fully registered 1 DSP block (1 Domain)                                                                                        ;
+;  Fully registered 1 DSP block in Clock Domain 'clk' (1 Entity)                                                                 ;
+;   Fully registered 1 DSP block in Entity vexrisc_full (1 Instance)                                                             ;
+;    Fully registered 1 DSP block in Instance                                                                                    ;
+;     Fully registered DSP block mult_2~mac                                                                                      ;
++--------------------------------------------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendations for Critical Chain                                                                                                                                                                 ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendation                                                                                                                                                                                     ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; The critical chain is limited by: Insufficient Registers                                                                                                                                           ;
+;                                                                                                                                                                                                    ;
+; 1) Make RTL design changes as described in the 'Optimizations Analyzed (Cumulative)' table                                                                                                         ;
+; 2) Reduce the delay of 'Long Paths' in the chain                                                                                                                                                   ;
+;   or insert more pipeline stages for 'Long Paths' in the chain                                                                                                                                     ;
+;   or remove retiming restrictions                                                                                                                                                                  ;
+;    Please see <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#mtr1430270744844'>Insufficient Registers - Section 5.2.1</a> for more information. ;
+;                                                                                                                                                                                                    ;
+; Add additional pipeline stages at Register #6:                                                                                                                                                     ;
+;  IBusCachedPlugin_cache|_zz_10_[27]                                                                                                                                                                ;
+;  Add additional pipeline stages along these paths BEFORE the destinations                                                                                                                          ;
+;   from bus debug_bus_cmd_payload_data[31:0] to bus IBusCachedPlugin_cache|_zz_10_[31:0]                                                                                                            ;
+;                                                                                                                                                                                                    ;
+; The critical chain has Domain Boundary Entry/Exit Constraint                                                                                                                                       ;
+;    Please see <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#mtr1430270804124'>Domain Boundary Entry/Exit</a> for more information.             ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Critical Chain Details                                                                                                                                                                    ;
++----------------------+-------------------------+-------------+----------------------------------------------------------------------------------------------------------------------------+
+; Path Info            ; Register                ; Register ID ; Element                                                                                                                    ;
++----------------------+-------------------------+-------------+----------------------------------------------------------------------------------------------------------------------------+
+; Long Path            ; REG (RAM)               ; #1          ; dataCache_1_|ways_0_data_symbol1_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a7~reg0                               ;
+; Long Path            ; REG (RAM)               ; #2          ; dataCache_1_|stageB_dataReadRsp_0[15]                                                                                      ;
+; Long Path            ;                         ;             ; dataCache_1_|ways_0_data_symbol1_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a7|portbdataout[0]                    ;
+; Long Path            ;                         ;             ; dataCache_1_|ways_0_data_symbol1_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a7~MEDIUM_EAB_RE_X110_Y77_N0_I97      ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|ways_0_data_symbol1_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a7~C4_X110_Y73_N0_I52                 ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|ways_0_data_symbol1_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a7~R4_X107_Y76_N0_I58                 ;
+; Long Path            ;                         ;             ; dataCache_1_|ways_0_data_symbol1_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a7~LOCAL_INTERCONNECT_X107_Y76_N0_I14 ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|ways_0_data_symbol1_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a7~LAB_RE_X107_Y76_N0_I14             ;
+; Long Path            ;                         ;             ; dataCache_1_|io_cpu_writeBack_data[10]~22|datad                                                                            ;
+; Long Path            ;                         ;             ; dataCache_1_|io_cpu_writeBack_data[10]~22|combout                                                                          ;
+; Long Path            ;                         ;             ; dataCache_1_|io_cpu_writeBack_data[10]~22~_LAB_RE_X107_Y76_N0_I101                                                         ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|io_cpu_writeBack_data[10]~22~_C4_X106_Y76_N0_I18                                                              ;
+; Long Path            ;                         ;             ; dataCache_1_|io_cpu_writeBack_data[10]~22~_LOCAL_INTERCONNECT_X107_Y77_N0_I37                                              ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|io_cpu_writeBack_data[10]~22~_LAB_RE_X107_Y77_N0_I32                                                          ;
+; Long Path            ;                         ;             ; _zz_52_[0]~42|datae                                                                                                        ;
+; Long Path            ;                         ;             ; _zz_52_[0]~42|combout                                                                                                      ;
+; Long Path            ;                         ;             ; _zz_52_[0]~42~_LAB_RE_X107_Y77_N0_I110                                                                                     ;
+; Long Path            ; Bypassed Hyper-Register ;             ; _zz_52_[0]~42~_C2_X107_Y75_N0_I32                                                                                          ;
+; Long Path            ; Bypassed Hyper-Register ;             ; _zz_52_[0]~42~_R4_X108_Y75_N0_I34                                                                                          ;
+; Long Path            ;                         ;             ; _zz_52_[0]~42~_LOCAL_INTERCONNECT_X111_Y75_N0_I59                                                                          ;
+; Long Path            ; Bypassed Hyper-Register ;             ; _zz_52_[0]~42~_LAB_RE_X111_Y75_N0_I17                                                                                      ;
+; Long Path            ;                         ;             ; _zz_52_[0]~42xsyn|datad                                                                                                    ;
+; Long Path            ;                         ;             ; _zz_52_[0]~42xsyn|combout                                                                                                  ;
+; Long Path            ;                         ;             ; _zz_52_[0]~42xsyn~_LAB_RE_X111_Y75_N0_I102                                                                                 ;
+; Long Path            ;                         ;             ; _zz_52_[0]~42xsyn~_LOCAL_INTERCONNECT_X111_Y75_N0_I7                                                                       ;
+; Long Path            ; Bypassed Hyper-Register ;             ; _zz_52_[0]~42xsyn~_LAB_RE_X111_Y75_N0_I10                                                                                  ;
+; Long Path            ;                         ;             ; decode_RS2[0]~48|datac                                                                                                     ;
+; Long Path            ;                         ;             ; decode_RS2[0]~48|combout                                                                                                   ;
+; Long Path            ;                         ;             ; decode_RS2[0]~48~_LAB_RE_X111_Y75_N0_I98                                                                                   ;
+; Long Path            ; Bypassed Hyper-Register ;             ; decode_RS2[0]~48~_C4_X111_Y75_N0_I18                                                                                       ;
+; Long Path            ; Bypassed Hyper-Register ;             ; decode_RS2[0]~48~_C4_X111_Y79_N0_I18                                                                                       ;
+; Long Path            ;                         ;             ; decode_RS2[0]~48~_LOCAL_INTERCONNECT_X111_Y83_N0_I3                                                                        ;
+; Long Path            ; Bypassed Hyper-Register ;             ; decode_RS2[0]~48~_LAB_RE_X111_Y83_N0_I42                                                                                   ;
+; Long Path            ;                         ;             ; decode_RS2[0]~110|datac                                                                                                    ;
+; Long Path            ;                         ;             ; decode_RS2[0]~110|combout                                                                                                  ;
+; Long Path            ;                         ;             ; decode_to_execute_RS2[17]|d                                                                                                ;
+; Long Path            ; Bypassed ALM Register   ;             ; decode_to_execute_RS2[17]~.comb                                                                                            ;
+; Long Path            ;                         ;             ; decode_to_execute_RS2[17]|q                                                                                                ;
+; Long Path            ;                         ;             ; decode_to_execute_RS2[17]~LAB_RE_X111_Y83_N0_I116                                                                          ;
+; Long Path            ;                         ;             ; decode_to_execute_RS2[17]~LOCAL_INTERCONNECT_X112_Y83_N0_I50                                                               ;
+; Long Path            ; Bypassed Hyper-Register ;             ; decode_to_execute_RS2[17]~LAB_RE_X112_Y83_N0_I23                                                                           ;
+; Long Path            ;                         ;             ; execute_RS2[17]|datae                                                                                                      ;
+; Long Path            ;                         ;             ; execute_RS2[17]|combout                                                                                                    ;
+; Long Path            ;                         ;             ; execute_RS2[17]~LAB_RE_X112_Y83_N0_I104                                                                                    ;
+; Long Path            ; Bypassed Hyper-Register ;             ; execute_RS2[17]~C2_X112_Y81_N0_I31                                                                                         ;
+; Long Path            ;                         ;             ; execute_RS2[17]~R4_X113_Y82_N0_I31_dff.d                                                                                   ;
+; Long Path (Critical) ; Hyper-Register          ; #3          ; execute_RS2[17]~R4_X113_Y82_N0_I31_dff                                                                                     ;
+; Long Path (Critical) ;                         ;             ; execute_RS2[17]~R4_X113_Y82_N0_I31_dff.q                                                                                   ;
+; Long Path (Critical) ;                         ;             ; execute_RS2[17]~R4_X113_Y82_N0_I31                                                                                         ;
+; Long Path (Critical) ;                         ;             ; execute_RS2[17]~LOCAL_INTERCONNECT_X116_Y82_N0_I40                                                                         ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; execute_RS2[17]~LAB_RE_X116_Y82_N0_I31                                                                                     ;
+; Long Path (Critical) ;                         ;             ; Mux_1900~19|dataf                                                                                                          ;
+; Long Path (Critical) ;                         ;             ; Mux_1900~19|combout                                                                                                        ;
+; Long Path (Critical) ;                         ;             ; Mux_1900~19~la_lab/laboutt[12]                                                                                             ;
+; Long Path (Critical) ;                         ;             ; Mux_1900~19~_LAB_RE_X116_Y82_N0_I106                                                                                       ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; Mux_1900~19~_R10_X107_Y82_N0_I69                                                                                           ;
+; Long Path (Critical) ;                         ;             ; Mux_1900~19~_LOCAL_INTERCONNECT_X113_Y82_N0_I11                                                                            ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; Mux_1900~19~_LAB_RE_X113_Y82_N0_I73                                                                                        ;
+; Long Path (Critical) ;                         ;             ; add_5~96|datad                                                                                                             ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; add_5~56|cout                                                                                                              ;
+; Long Path (Critical) ;                         ;             ; add_5~56~_LAB_RE_X113_Y82_N0_I134                                                                                          ;
+; Long Path (Critical) ;                         ;             ; add_5~56~_LAB_RE_X113_Y81_N0_I146                                                                                          ;
+; Long Path (Critical) ;                         ;             ; add_5~61|cin                                                                                                               ;
+; Long Path (Critical) ;                         ;             ; add_5~61|sumout                                                                                                            ;
+; Long Path (Critical) ;                         ;             ; add_5~61~_LAB_RE_X113_Y81_N0_I95                                                                                           ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; add_5~61~_C2_X112_Y81_N0_I15                                                                                               ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; add_5~61~_C2_X112_Y83_N0_I15                                                                                               ;
+; Long Path (Critical) ;                         ;             ; add_5~61~_LOCAL_INTERCONNECT_X113_Y85_N0_I31                                                                               ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; add_5~61~_LAB_RE_X113_Y85_N0_I79                                                                                           ;
+; Long Path (Critical) ;                         ;             ; _zz_33_[0]~40|datae                                                                                                        ;
+; Long Path (Critical) ;                         ;             ; _zz_33_[0]~40|combout                                                                                                      ;
+; Long Path (Critical) ;                         ;             ; _zz_33_[0]~40~_LAB_RE_X113_Y85_N0_I132                                                                                     ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; _zz_33_[0]~40~_C4_X113_Y81_N0_I48                                                                                          ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; _zz_33_[0]~40~_R2_X112_Y81_N0_I40                                                                                          ;
+; Long Path (Critical) ;                         ;             ; _zz_33_[0]~40~_LOCAL_INTERCONNECT_X112_Y81_N0_I29                                                                          ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; _zz_33_[0]~40~_LAB_RE_X112_Y81_N0_I54                                                                                      ;
+; Long Path (Critical) ;                         ;             ; _zz_33_[0]~138|datag                                                                                                       ;
+; Long Path (Critical) ;                         ;             ; _zz_33_[0]~138|combout                                                                                                     ;
+; Long Path (Critical) ;                         ;             ; execute_to_memory_REGFILE_WRITE_DATA[19]|d                                                                                 ;
+; Long Path (Critical) ; Bypassed ALM Register   ;             ; execute_to_memory_REGFILE_WRITE_DATA[19]~.comb                                                                             ;
+; Long Path (Critical) ;                         ;             ; execute_to_memory_REGFILE_WRITE_DATA[19]|q                                                                                 ;
+; Long Path (Critical) ;                         ;             ; execute_to_memory_REGFILE_WRITE_DATA[19]~la_lab/laboutb[6]                                                                 ;
+; Long Path (Critical) ;                         ;             ; execute_to_memory_REGFILE_WRITE_DATA[19]~LAB_RE_X112_Y81_N0_I120                                                           ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; execute_to_memory_REGFILE_WRITE_DATA[19]~R4_X109_Y81_N0_I48                                                                ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; execute_to_memory_REGFILE_WRITE_DATA[19]~R4_X105_Y81_N0_I48                                                                ;
+; Long Path (Critical) ;                         ;             ; execute_to_memory_REGFILE_WRITE_DATA[19]~LOCAL_INTERCONNECT_X107_Y81_N0_I25                                                ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; execute_to_memory_REGFILE_WRITE_DATA[19]~LAB_RE_X107_Y81_N0_I24                                                            ;
+; Long Path (Critical) ;                         ;             ; reduce_nor_115~0|datae                                                                                                     ;
+; Long Path (Critical) ;                         ;             ; reduce_nor_115~0|combout                                                                                                   ;
+; Long Path (Critical) ;                         ;             ; reduce_nor_115~0~_LAB_RE_X107_Y81_N0_I106                                                                                  ;
+; Long Path (Critical) ;                         ;             ; reduce_nor_115~0_R10_X98_Y81_N0_I68_dff|d                                                                                  ;
+; Long Path (Critical) ; Hyper-Register          ; #4          ; reduce_nor_115~0_R10_X98_Y81_N0_I68_dff                                                                                    ;
+; Long Path            ;                         ;             ; reduce_nor_115~0_R10_X98_Y81_N0_I68_dff|q                                                                                  ;
+; Long Path            ;                         ;             ; reduce_nor_115~0~_R10_X98_Y81_N0_I68                                                                                       ;
+; Long Path            ;                         ;             ; reduce_nor_115~0~_LOCAL_INTERCONNECT_X104_Y81_N0_I11                                                                       ;
+; Long Path            ; Bypassed Hyper-Register ;             ; reduce_nor_115~0~_LAB_RE_X104_Y81_N0_I57                                                                                   ;
+; Long Path            ;                         ;             ; i11051|datad                                                                                                               ;
+; Long Path            ;                         ;             ; i11051|combout                                                                                                             ;
+; Long Path            ;                         ;             ; i11051~LAB_RE_X104_Y81_N0_I122                                                                                             ;
+; Long Path            ;                         ;             ; i11051~LOCAL_INTERCONNECT_X104_Y81_N0_I21                                                                                  ;
+; Long Path            ; Bypassed Hyper-Register ;             ; i11051~LAB_RE_X104_Y81_N0_I64                                                                                              ;
+; Long Path            ;                         ;             ; _zz_103_[0]~1|datae                                                                                                        ;
+; Long Path            ;                         ;             ; _zz_103_[0]~1|combout                                                                                                      ;
+; Long Path            ;                         ;             ; _zz_103_[0]~1~la_mlab/laboutb[12]                                                                                          ;
+; Long Path            ;                         ;             ; _zz_103_[0]~1~_LAB_RE_X104_Y81_N0_I126                                                                                     ;
+; Long Path            ; Bypassed Hyper-Register ;             ; _zz_103_[0]~1~_R2_X103_Y81_N0_I38                                                                                          ;
+; Long Path            ; Bypassed Hyper-Register ;             ; _zz_103_[0]~1~_C2_X102_Y81_N0_I7                                                                                           ;
+; Long Path            ;                         ;             ; _zz_103_[0]~1~_LOCAL_INTERCONNECT_X103_Y82_N0_I54                                                                          ;
+; Long Path            ; Bypassed Hyper-Register ;             ; _zz_103_[0]~1~_LAB_RE_X103_Y82_N0_I48                                                                                      ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~13xsyn|datae                                                               ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~13xsyn|combout                                                             ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~13xsyn~la_lab/laboutb[4]                                                   ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~13xsyn~_LAB_RE_X103_Y82_N0_I118                                            ;
+; Long Path            ; Bypassed Hyper-Register ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~13xsyn~_C4_X103_Y82_N0_I3                                                  ;
+; Long Path            ; Bypassed Hyper-Register ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~13xsyn~_R2_X102_Y84_N0_I36                                                 ;
+; Long Path            ; Bypassed Hyper-Register ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~13xsyn~_R2_X101_Y84_N0_I35                                                 ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~13xsyn~_LOCAL_INTERCONNECT_X102_Y84_N0_I45                                 ;
+; Long Path            ; Bypassed Hyper-Register ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~13xsyn~_LAB_RE_X102_Y84_N0_I25                                             ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn|datad                                                               ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn|combout                                                             ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn~_LAB_RE_X102_Y84_N0_I106                                            ;
+; Long Path            ; Bypassed Hyper-Register ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn~_C4_X102_Y80_N0_I52                                                 ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn~_LOCAL_INTERCONNECT_X103_Y80_N0_I42                                 ;
+; Long Path            ; Bypassed Hyper-Register ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn~_LAB_RE_X103_Y80_N0_I48                                             ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn_56|datae                                                            ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn_56|combout                                                          ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn_56~la_lab/laboutb[4]                                                ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn_56~_LAB_RE_X103_Y80_N0_I118                                         ;
+; Long Path            ;                         ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn_56~_LOCAL_INTERCONNECT_X103_Y80_N0_I15                              ;
+; Long Path            ; Bypassed Hyper-Register ;             ; DBusCachedPlugin_mmuBus_rsp_physicalAddress[12]~22xsyn_56~_LAB_RE_X103_Y80_N0_I39                                          ;
+; Long Path            ;                         ;             ; dataCache_1_|_zz_8_[0]~3|dataf                                                                                             ;
+; Long Path            ;                         ;             ; dataCache_1_|_zz_8_[0]~3|combout                                                                                           ;
+; Long Path            ;                         ;             ; dataCache_1_|_zz_8_[0]~3~_LAB_RE_X103_Y80_N0_I110                                                                          ;
+; Long Path            ;                         ;             ; dataCache_1_|_zz_8_[0]~3~_LOCAL_INTERCONNECT_X103_Y80_N0_I13                                                               ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|_zz_8_[0]~3~_LAB_RE_X103_Y80_N0_I12                                                                           ;
+; Long Path            ;                         ;             ; dataCache_1_|_zz_8_[0]~0|datab                                                                                             ;
+; Long Path            ;                         ;             ; dataCache_1_|_zz_8_[0]~0|combout                                                                                           ;
+; Long Path            ;                         ;             ; dataCache_1_|stageB_waysHits[0]|d                                                                                          ;
+; Long Path            ; Bypassed ALM Register   ;             ; dataCache_1_|stageB_waysHits[0]~.comb                                                                                      ;
+; Long Path            ;                         ;             ; dataCache_1_|stageB_waysHits[0]|q                                                                                          ;
+; Long Path            ;                         ;             ; dataCache_1_|stageB_waysHits[0]~LAB_RE_X103_Y80_N0_I100                                                                    ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|stageB_waysHits[0]~C2_X103_Y78_N0_I31                                                                         ;
+; Long Path            ;                         ;             ; dataCache_1_|stageB_waysHits[0]~R4_X104_Y79_N0_I30_dff.d                                                                   ;
+; Long Path            ; Hyper-Register          ; #5          ; dataCache_1_|stageB_waysHits[0]~R4_X104_Y79_N0_I30_dff                                                                     ;
+; Long Path            ;                         ;             ; dataCache_1_|stageB_waysHits[0]~R4_X104_Y79_N0_I30_dff.q                                                                   ;
+; Long Path            ;                         ;             ; dataCache_1_|stageB_waysHits[0]~R4_X104_Y79_N0_I30                                                                         ;
+; Long Path            ;                         ;             ; dataCache_1_|stageB_waysHits[0]~LOCAL_INTERCONNECT_X107_Y79_N0_I40                                                         ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|stageB_waysHits[0]~LAB_RE_X107_Y79_N0_I47                                                                     ;
+; Long Path            ;                         ;             ; dataCache_1_|io_cpu_writeBack_haltIt~1|dataf                                                                               ;
+; Long Path            ;                         ;             ; dataCache_1_|io_cpu_writeBack_haltIt~1|combout                                                                             ;
+; Long Path            ;                         ;             ; dataCache_1_|io_cpu_writeBack_haltIt~1~_LAB_RE_X107_Y79_N0_I114                                                            ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|io_cpu_writeBack_haltIt~1~_R4_X108_Y79_N0_I1                                                                  ;
+; Long Path            ;                         ;             ; dataCache_1_|io_cpu_writeBack_haltIt~1~_LOCAL_INTERCONNECT_X108_Y79_N0_I17                                                 ;
+; Long Path            ; Bypassed Hyper-Register ;             ; dataCache_1_|io_cpu_writeBack_haltIt~1~_LAB_RE_X108_Y79_N0_I22                                                             ;
+; Long Path            ;                         ;             ; execute_arbitration_isStuckByOthers~1xsyn|datad                                                                            ;
+; Long Path            ;                         ;             ; execute_arbitration_isStuckByOthers~1xsyn|combout                                                                          ;
+; Long Path            ;                         ;             ; execute_arbitration_isStuckByOthers~1xsyn~_LAB_RE_X108_Y79_N0_I104                                                         ;
+; Long Path            ;                         ;             ; execute_arbitration_isStuckByOthers~1xsyn~_LOCAL_INTERCONNECT_X109_Y79_N0_I37                                              ;
+; Long Path            ; Bypassed Hyper-Register ;             ; execute_arbitration_isStuckByOthers~1xsyn~_LAB_RE_X109_Y79_N0_I14                                                          ;
+; Long Path            ;                         ;             ; execute_arbitration_isStuckByOthers~1xsyn_3|datad                                                                          ;
+; Long Path            ;                         ;             ; execute_arbitration_isStuckByOthers~1xsyn_3|combout                                                                        ;
+; Long Path            ;                         ;             ; execute_arbitration_isStuckByOthers~1xsyn_3~_LAB_RE_X109_Y79_N0_I100                                                       ;
+; Long Path            ; Bypassed Hyper-Register ;             ; execute_arbitration_isStuckByOthers~1xsyn_3~_R2_X110_Y79_N0_I27                                                            ;
+; Long Path            ;                         ;             ; execute_arbitration_isStuckByOthers~1xsyn_3~_R24_C16_INTERCONNECT_DRIVER_X111_Y79_N0_I1                                    ;
+; Long Path            ; Bypassed Hyper-Register ;             ; execute_arbitration_isStuckByOthers~1xsyn_3~_R24_X112_Y79_N0_I35                                                           ;
+; Long Path            ; Bypassed Hyper-Register ;             ; execute_arbitration_isStuckByOthers~1xsyn_3~_R4_X119_Y79_N0_I28                                                            ;
+; Long Path            ;                         ;             ; execute_arbitration_isStuckByOthers~1xsyn_3~_LOCAL_INTERCONNECT_X122_Y79_N0_I41                                            ;
+; Long Path            ; Bypassed Hyper-Register ;             ; execute_arbitration_isStuckByOthers~1xsyn_3~_LAB_RE_X122_Y79_N0_I70                                                        ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1|datad                                                                                        ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1|combout                                                                                      ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1~_LAB_RE_X122_Y79_N0_I128                                                                     ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1~_LOCAL_INTERCONNECT_X122_Y79_N0_I29                                                          ;
+; Long Path            ; Bypassed Hyper-Register ;             ; IBusCachedPlugin_cache|i791~1~_LAB_RE_X122_Y79_N0_I24                                                                      ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1xsyn_34|datae                                                                                 ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1xsyn_34|combout                                                                               ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1xsyn_34~la_lab/laboutt[12]                                                                    ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1xsyn_34~_LAB_RE_X122_Y79_N0_I106                                                              ;
+; Long Path            ; Bypassed Hyper-Register ;             ; IBusCachedPlugin_cache|i791~1xsyn_34~_C2_X122_Y77_N0_I31                                                                   ;
+; Long Path            ; Bypassed Hyper-Register ;             ; IBusCachedPlugin_cache|i791~1xsyn_34~_R4_X119_Y78_N0_I57                                                                   ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1xsyn_34~_LOCAL_INTERCONNECT_X119_Y78_N0_I39                                                   ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|i791~1xsyn_34~_LAB_RE_X119_Y78_N0_I80                                                               ;
+; Long Path            ; Bypassed Hyper-Register ;             ; IBusCachedPlugin_cache|_zz_10_[5]~xbothalf/xale1/xlut/xreghipi/xcebot0/hipi_out                                            ;
+; Long Path            ;                         ;             ; IBusCachedPlugin_cache|_zz_10_[27]|ena                                                                                     ;
+; Domain Boundary Exit ; ALM Register            ; #6          ; IBusCachedPlugin_cache|_zz_10_[27]                                                                                         ;
++----------------------+-------------------------+-------------+----------------------------------------------------------------------------------------------------------------------------+
+
+
+
++----------------------+
+; Fastforward Messages ;
++----------------------+
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+    Info: Processing started: Tue Jan  5 12:26:18 2021
+    Info: System process ID: 25175
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off vexrisc_full -c vexrisc_full --fastforward
+Info (16677): Loading routed database.
+Info (16734): Loading "routed" snapshot for partition "root_partition".
+Info (16678): Successfully loaded routed database: elapsed time is 00:00:04.
+Info (16303): High Performance Effort optimization mode selected -- timing performance will be prioritized at the potential cost of increased compilation time
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 100 degrees C
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 100 degrees C
+Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
+Warning (18291): Timing characteristics of device 1SX065HH1F35E1VG are preliminary
+Info (19539): Reading the HDL-embedded SDC files elapsed 00:00:00.
+Info (332104): Reading SDC File: 'vexriscv.sdc'
+Info (19449): Reading SDC files elapsed 00:00:00.
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
+Info (332111): Found 1 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):    3.500          clk
+Info (18747): Starting Fast Forward Timing Closure Recommendations analysis.
+Info (17959): Fast Forward step #1 completed.
+Info (17959): Fast Forward step #2 completed.
+Info (18748): Completed Fast Forward Timing Closure Recommendations analysis.
+Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:06
+
+

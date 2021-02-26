@@ -1,0 +1,156 @@
+Fitter Retime Stage Report for vexrisc_full
+Fri Feb 26 15:47:29 2021
+Quartus Prime Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Hyper-Retimer Settings
+  3. Reset Sequence Requirement
+  4. Retiming Limit Summary
+  5. Critical Chain Summary for Clock Domain clk
+  6. Retime Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------+
+; Hyper-Retimer Settings                           ;
++------------------------+---------+---------------+
+; Option                 ; Setting ; Default Value ;
++------------------------+---------+---------------+
+; Enable Auto-Pipelining ; On      ; On            ;
++------------------------+---------+---------------+
+
+
++------------------------------------------+
+; Reset Sequence Requirement               ;
++------------+-----------------------------+
+; Clock Name ; Number of additional cycles ;
++------------+-----------------------------+
+; clk        ; 3                           ;
++------------+-----------------------------+
+Note: Due to retiming optimizations, a clock domain may require a longer reset sequence to ensure correct functionality.  The table above indicates the minimum number of additional reset sequence cycles needed for each clock domain.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Retiming Limit Summary                                                                                                                                                        ;
++------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Clock Transfer   ; Limiting Reason        ; Recommendation                                                                                                                    ;
++------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Clock Domain clk ; Insufficient Registers ; See the Fast Forward Timing Closure Recommendations report for step-by-step suggestions for RTL changes and estimated performance ;
++------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+
+Critical Chain Summary for Clock Domain clk
+===============================================================================
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendations for Critical Chain                                                                                                                                                                 ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendation                                                                                                                                                                                     ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; The critical chain is limited by: Insufficient Registers                                                                                                                                           ;
+;                                                                                                                                                                                                    ;
+; 1) Reduce the delay of 'Long Paths' in the chain                                                                                                                                                   ;
+;   or insert more pipeline stages for 'Long Paths' in the chain                                                                                                                                     ;
+;   or remove retiming restrictions                                                                                                                                                                  ;
+;    Please see <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#mtr1430270744844'>Insufficient Registers - Section 5.2.1</a> for more information. ;
+;                                                                                                                                                                                                    ;
+; Retiming Restrictions at Register #1:                                                                                                                                                              ;
+;  writeBack_arbitration_isValid                                                                                                                                                                     ;
+;   Node uses an asynchronous clear port                                                                                                                                                             ;
+;                                                                                                                                                                                                    ;
+; Retiming Restrictions at Register #2:                                                                                                                                                              ;
+;  IBusCachedPlugin_fetchPc_pcReg[2]                                                                                                                                                                 ;
+;   Node uses an asynchronous clear port                                                                                                                                                             ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Critical Chain Details                                                                                                                         ;
++----------------------+-------------------------+-------------+---------------------------------------------------------------------------------+
+; Path Info            ; Register                ; Register ID ; Element                                                                         ;
++----------------------+-------------------------+-------------+---------------------------------------------------------------------------------+
+; Retiming Restriction ; ALM Register            ; #1          ; writeBack_arbitration_isValid                                                   ;
+; Long Path (Critical) ;                         ;             ; writeBack_arbitration_isValid|q                                                 ;
+; Long Path (Critical) ;                         ;             ; writeBack_arbitration_isValid~la_mlab/laboutb[13]                               ;
+; Long Path (Critical) ;                         ;             ; writeBack_arbitration_isValid~LAB_RE_X119_Y80_N0_I127                           ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; writeBack_arbitration_isValid~R10_X109_Y80_N0_I63                               ;
+; Long Path (Critical) ;                         ;             ; writeBack_arbitration_isValid~LOCAL_INTERCONNECT_X108_Y80_N0_I22                ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; writeBack_arbitration_isValid~LAB_RE_X108_Y80_N0_I79                            ;
+; Long Path (Critical) ;                         ;             ; _zz_192_~0|datae                                                                ;
+; Long Path (Critical) ;                         ;             ; _zz_192_~0|combout                                                              ;
+; Long Path (Critical) ;                         ;             ; _zz_192_~0~la_lab/laboutb[18]                                                   ;
+; Long Path (Critical) ;                         ;             ; _zz_192_~0~_LAB_RE_X108_Y80_N0_I132                                             ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; _zz_192_~0~_C2_X108_Y78_N0_I29                                                  ;
+; Long Path (Critical) ;                         ;             ; _zz_192_~0~_LOCAL_INTERCONNECT_X108_Y79_N0_I26                                  ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; _zz_192_~0~_LAB_RE_X108_Y79_N0_I42                                              ;
+; Long Path (Critical) ;                         ;             ; dataCache_1_|_zz_13_~1xsyn|datac                                                ;
+; Long Path (Critical) ;                         ;             ; dataCache_1_|_zz_13_~1xsyn|combout                                              ;
+; Long Path (Critical) ;                         ;             ; dataCache_1_|_zz_13_~1xsyn~_LAB_RE_X108_Y79_N0_I114                             ;
+; Long Path (Critical) ;                         ;             ; dataCache_1_|_zz_13_~1xsyn~_LOCAL_INTERCONNECT_X108_Y79_N0_I16                  ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; dataCache_1_|_zz_13_~1xsyn~_LAB_RE_X108_Y79_N0_I74                              ;
+; Long Path (Critical) ;                         ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2|datac                                    ;
+; Long Path (Critical) ;                         ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2|combout                                  ;
+; Long Path (Critical) ;                         ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2~_LAB_RE_X108_Y79_N0_I130                 ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2~_R10_X109_Y79_N0_I16                     ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2~_R10_X119_Y79_N0_I16                     ;
+; Long Path (Critical) ;                         ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2~_LOCAL_INTERCONNECT_X122_Y79_N0_I57      ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; dataCache_1_|io_cpu_writeBack_haltIt~2~_LAB_RE_X122_Y79_N0_I45                  ;
+; Long Path (Critical) ;                         ;             ; decode_arbitration_isStuck~12|datac                                             ;
+; Long Path (Critical) ;                         ;             ; decode_arbitration_isStuck~12|combout                                           ;
+; Long Path (Critical) ;                         ;             ; decode_arbitration_isStuck~12~_LAB_RE_X122_Y79_N0_I116                          ;
+; Long Path (Critical) ;                         ;             ; decode_arbitration_isStuck~12~_LOCAL_INTERCONNECT_X123_Y79_N0_I47               ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; decode_arbitration_isStuck~12~_LAB_RE_X123_Y79_N0_I56                           ;
+; Long Path (Critical) ;                         ;             ; i13921~0|datae                                                                  ;
+; Long Path (Critical) ;                         ;             ; i13921~0|combout                                                                ;
+; Long Path (Critical) ;                         ;             ; i13921~0~la_lab/laboutb[8]                                                      ;
+; Long Path (Critical) ;                         ;             ; i13921~0~_LAB_RE_X123_Y79_N0_I122                                               ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; i13921~0~_C3_X123_Y76_N0_I35                                                    ;
+; Long Path (Critical) ;                         ;             ; i13921~0~_LOCAL_INTERCONNECT_X124_Y77_N0_I50                                    ;
+; Long Path (Critical) ;                         ;             ; i13921~0~_LAB_RE_X124_Y77_N0_I81                                                ;
+; Long Path (Critical) ; Bypassed Hyper-Register ;             ; IBusCachedPlugin_fetchPc_pcReg[8]~xtophalf/xale1/xlut/xreghipi/xcebot0/hipi_out ;
+; Long Path (Critical) ;                         ;             ; IBusCachedPlugin_fetchPc_pcReg[2]|ena                                           ;
+; Retiming Restriction ; ALM Register            ; #2          ; IBusCachedPlugin_fetchPc_pcReg[2]                                               ;
++----------------------+-------------------------+-------------+---------------------------------------------------------------------------------+
+
+
+
++-----------------+
+; Retime Messages ;
++-----------------+
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+    Info: Processing started: Fri Feb 26 15:44:26 2021
+    Info: System process ID: 5416
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off vexrisc_full -c vexrisc_full --plan --place --route --retime --finalize
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = vexrisc_full
+Info: Revision = vexrisc_full
+Info (17966): Starting Hyper-Retimer operations.
+Info (17968): Completed Hyper-Retimer operations.
+Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:07
+
+

@@ -1,0 +1,88 @@
+Fitter Finalize Stage Report for vexrisc_full
+Fri Feb 26 15:47:56 2021
+Quartus Prime Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Routing Usage Summary
+  3. Finalize Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------+
+; Routing Usage Summary                                        ;
++--------------------------------+-----------------------------+
+; Routing Resource Type          ; Usage                       ;
++--------------------------------+-----------------------------+
+; Block Input Muxes              ; 4 / 178,868 ( < 1 % )       ;
+; Block interconnects            ; 7,602 / 2,019,600 ( < 1 % ) ;
+; C16 interconnects              ; 42 / 50,112 ( < 1 % )       ;
+; C2 interconnects               ; 1,327 / 300,672 ( < 1 % )   ;
+; C3 interconnects               ; 1,520 / 609,984 ( < 1 % )   ;
+; C4 interconnects               ; 1,956 / 392,256 ( < 1 % )   ;
+; CLOCK_INVERTs                  ; 0 / 1,984 ( 0 % )           ;
+; DCM_muxes                      ; 0 / 544 ( 0 % )             ;
+; Direct links                   ; 1,390 / 2,019,600 ( < 1 % ) ;
+; GAP Interconnects              ; 0 / 86,688 ( 0 % )          ;
+; GAPs                           ; 0 / 29,304 ( 0 % )          ;
+; HIO Buffers                    ; 0 / 80,640 ( 0 % )          ;
+; Horizontal Buffers             ; 0 / 57,888 ( 0 % )          ;
+; Horizontal_clock_segment_muxes ; 0 / 2,240 ( 0 % )           ;
+; Programmable Inverts           ; 22 / 103,536 ( < 1 % )      ;
+; R10 interconnects              ; 1,498 / 568,872 ( < 1 % )   ;
+; R2 interconnects               ; 1,499 / 501,120 ( < 1 % )   ;
+; R24 interconnects              ; 17 / 72,576 ( < 1 % )       ;
+; R24/C16 interconnect drivers   ; 57 / 100,224 ( < 1 % )      ;
+; R4 interconnects               ; 2,222 / 727,776 ( < 1 % )   ;
+; Row Clock Tap-Offs             ; 223 / 162,000 ( < 1 % )     ;
+; Switchbox_clock_muxes          ; 9 / 12,800 ( < 1 % )        ;
+; Vertical_seam_tap_muxes        ; 6 / 5,952 ( < 1 % )         ;
++--------------------------------+-----------------------------+
+
+
++-------------------+
+; Finalize Messages ;
++-------------------+
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+    Info: Processing started: Fri Feb 26 15:44:26 2021
+    Info: System process ID: 5416
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off vexrisc_full -c vexrisc_full --plan --place --route --retime --finalize
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = vexrisc_full
+Info: Revision = vexrisc_full
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 100 degrees C
+Info (18258): Fitter Physical Synthesis operations beginning
+Info (18259): Fitter Physical Synthesis operations ending: elapsed time is 00:00:00
+Critical Warning (19527): There are 24 unused RX channels and 24 unused TX channels in the design.
+    Info (19528): Add the QSF assignment 'set_instance_assignment -name PRESERVE_UNUSED_XCVR_CHANNEL ON -to <pin_name>' for each unused channel that will be used in future.
+    Info (19529): The above QSF assignment will preserve the performance of specified channels over time.
+Info (16557): Fitter post-fit operations ending: elapsed time is 00:00:26
+
+

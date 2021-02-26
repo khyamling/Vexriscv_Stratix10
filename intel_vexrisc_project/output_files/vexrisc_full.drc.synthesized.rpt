@@ -1,0 +1,649 @@
+Design Assistant report for vexrisc_full
+Fri Feb 26 15:35:16 2021
+Quartus Prime Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Synthesized) Results - 2 of 9 Rules Failed
+  3. RES-30134 - Registers Not Reachable from Reset Release IP
+  4. FLP-10500 - Non Driving Top Level Inputs Found
+  5. RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes
+  6. RES-30131 - Reset Nets with Polarity Conflict
+  7. RES-30132 - Registers May Not Be Properly Reset
+  8. TMC-20052 - Inferred Latch Count Check
+  9. TMC-20053 - DSP Inputs Driven by High Fan-Out Net
+ 10. TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible
+ 11. TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant (Synthesized) Results - 2 of 9 Rules Failed                                                                  ;
++-------------------------------------------------------------------------------------------------------+----------+------------+
+; Rule                                                                                                  ; Severity ; Violations ;
++-------------------------------------------------------------------------------------------------------+----------+------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP                                             ; Medium   ; 500        ;
+; FLP-10500 - Non Driving Top Level Inputs Found                                                        ; Low      ; 2          ;
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes ; High     ; 0          ;
+; RES-30131 - Reset Nets with Polarity Conflict                                                         ; Medium   ; 0          ;
+; RES-30132 - Registers May Not Be Properly Reset                                                       ; Medium   ; 0          ;
+; TMC-20052 - Inferred Latch Count Check                                                                ; Low      ; 0          ;
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net                                                     ; Low      ; 0          ;
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible                                 ; Low      ; 0          ;
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested                                ; Low      ; 0          ;
++-------------------------------------------------------------------------------------------------------+----------+------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	500
+Rule Parameters:      	max_violations = 500
++---------------------------------------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP     ;
++---------------------------------------------------------------+
+; Register Node                                                 ;
++---------------------------------------------------------------+
+; CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[23]      ;
+; CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[26]      ;
+; CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[3]       ;
+; CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[4]       ;
+; CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[5]       ;
+; CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[9]       ;
+; CsrPlugin_exceptionPortCtrl_exceptionContext_code[0]          ;
+; CsrPlugin_exceptionPortCtrl_exceptionContext_code[1]          ;
+; CsrPlugin_exceptionPortCtrl_exceptionContext_code[2]          ;
+; CsrPlugin_exceptionPortCtrl_exceptionContext_code[3]          ;
+; CsrPlugin_interrupt_code[2]                                   ;
+; CsrPlugin_interrupt_code[3]                                   ;
+; CsrPlugin_mcause_exceptionCode[0]                             ;
+; CsrPlugin_mcause_exceptionCode[1]                             ;
+; CsrPlugin_mcause_exceptionCode[2]                             ;
+; CsrPlugin_mcause_exceptionCode[3]                             ;
+; CsrPlugin_mepc[0]                                             ;
+; CsrPlugin_mepc[1]                                             ;
+; CsrPlugin_mepc[23]                                            ;
+; CsrPlugin_mepc[26]                                            ;
+; CsrPlugin_mepc[2]                                             ;
+; CsrPlugin_mepc[3]                                             ;
+; CsrPlugin_mepc[5]                                             ;
+; CsrPlugin_mie_MSIE                                            ;
+; CsrPlugin_mip_MSIP                                            ;
+; CsrPlugin_mtval[23]                                           ;
+; CsrPlugin_mtval[26]                                           ;
+; CsrPlugin_mtval[3]                                            ;
+; CsrPlugin_mtval[4]                                            ;
+; CsrPlugin_mtval[5]                                            ;
+; CsrPlugin_mtval[9]                                            ;
+; DebugPlugin_resetIt                                           ;
+; DebugPlugin_stepIt                                            ;
+; IBusCachedPlugin_cache|_zz_10_[1]                             ;
+; IBusCachedPlugin_cache|_zz_3_                                 ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[0]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[10]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[11]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[12]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[13]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[14]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[15]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[16]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[17]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[18]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[19]     ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[1]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[2]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[3]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[4]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[5]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[6]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[7]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[8]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_address[9]      ;
+; IBusCachedPlugin_cache|decodeStage_hit_tags_0_valid           ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[12] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[13] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[14] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[15] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[16] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[17] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[18] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[19] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[20] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[21] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[22] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[23] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[24] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[25] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[27] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[28] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[30] ;
+; IBusCachedPlugin_cache|decodeStage_mmuRsp_physicalAddress[31] ;
+; IBusCachedPlugin_cache|lineLoader_address[12]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[13]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[14]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[15]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[16]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[17]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[18]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[19]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[20]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[21]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[22]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[23]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[24]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[25]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[26]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[27]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[28]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[29]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[30]                 ;
+; IBusCachedPlugin_cache|lineLoader_address[31]                 ;
+; IBusCachedPlugin_cache|lineLoader_flushCounter[0]             ;
+; IBusCachedPlugin_cache|lineLoader_flushCounter[1]             ;
+; IBusCachedPlugin_cache|lineLoader_flushCounter[2]             ;
+; IBusCachedPlugin_cache|lineLoader_flushCounter[3]             ;
+; IBusCachedPlugin_cache|lineLoader_flushCounter[4]             ;
+; IBusCachedPlugin_cache|lineLoader_flushCounter[5]             ;
+; IBusCachedPlugin_cache|lineLoader_flushPending                ;
+; IBusCachedPlugin_cache|lineLoader_hadError                    ;
+; IBusCachedPlugin_cache|lineLoader_wordIndex[0]                ;
+; IBusCachedPlugin_cache|lineLoader_wordIndex[1]                ;
+; IBusCachedPlugin_cache|lineLoader_wordIndex[2]                ;
+; MmuPlugin_ports_0_cache_0_allowExecute                        ;
+; MmuPlugin_ports_0_cache_0_allowRead                           ;
+; MmuPlugin_ports_0_cache_0_allowWrite                          ;
+; MmuPlugin_ports_0_cache_0_exception                           ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[0]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[1]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[2]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[3]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[4]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[5]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[6]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[7]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[8]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_0[9]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[0]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[1]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[2]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[3]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[4]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[5]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[6]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[7]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[8]                ;
+; MmuPlugin_ports_0_cache_0_physicalAddress_1[9]                ;
+; MmuPlugin_ports_0_cache_0_superPage                           ;
+; MmuPlugin_ports_0_cache_0_valid                               ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[0]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[1]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[2]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[3]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[4]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[5]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[6]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[7]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[8]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_0[9]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[0]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[1]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[2]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[3]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[4]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[5]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[6]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[7]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[8]                 ;
+; MmuPlugin_ports_0_cache_0_virtualAddress_1[9]                 ;
+; MmuPlugin_ports_0_cache_1_allowExecute                        ;
+; MmuPlugin_ports_0_cache_1_allowRead                           ;
+; MmuPlugin_ports_0_cache_1_allowWrite                          ;
+; MmuPlugin_ports_0_cache_1_exception                           ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[0]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[1]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[2]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[3]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[4]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[5]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[6]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[7]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[8]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_0[9]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[0]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[1]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[2]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[3]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[4]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[5]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[6]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[7]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[8]                ;
+; MmuPlugin_ports_0_cache_1_physicalAddress_1[9]                ;
+; MmuPlugin_ports_0_cache_1_superPage                           ;
+; MmuPlugin_ports_0_cache_1_valid                               ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[0]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[1]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[2]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[3]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[4]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[5]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[6]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[7]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[8]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_0[9]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[0]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[1]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[2]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[3]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[4]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[5]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[6]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[7]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[8]                 ;
+; MmuPlugin_ports_0_cache_1_virtualAddress_1[9]                 ;
+; MmuPlugin_ports_0_cache_2_allowExecute                        ;
+; MmuPlugin_ports_0_cache_2_allowRead                           ;
+; MmuPlugin_ports_0_cache_2_allowWrite                          ;
+; MmuPlugin_ports_0_cache_2_exception                           ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[0]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[1]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[2]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[3]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[4]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[5]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[6]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[7]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[8]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_0[9]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[0]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[1]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[2]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[3]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[4]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[5]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[6]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[7]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[8]                ;
+; MmuPlugin_ports_0_cache_2_physicalAddress_1[9]                ;
+; MmuPlugin_ports_0_cache_2_superPage                           ;
+; MmuPlugin_ports_0_cache_2_valid                               ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[0]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[1]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[2]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[3]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[4]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[5]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[6]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[7]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[8]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_0[9]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[0]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[1]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[2]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[3]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[4]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[5]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[6]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[7]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[8]                 ;
+; MmuPlugin_ports_0_cache_2_virtualAddress_1[9]                 ;
+; MmuPlugin_ports_0_cache_3_allowExecute                        ;
+; MmuPlugin_ports_0_cache_3_allowRead                           ;
+; MmuPlugin_ports_0_cache_3_allowWrite                          ;
+; MmuPlugin_ports_0_cache_3_exception                           ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[0]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[1]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[2]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[3]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[4]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[5]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[6]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[7]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[8]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_0[9]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[0]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[1]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[2]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[3]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[4]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[5]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[6]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[7]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[8]                ;
+; MmuPlugin_ports_0_cache_3_physicalAddress_1[9]                ;
+; MmuPlugin_ports_0_cache_3_superPage                           ;
+; MmuPlugin_ports_0_cache_3_valid                               ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[0]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[1]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[2]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[3]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[4]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[5]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[6]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[7]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[8]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_0[9]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[0]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[1]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[2]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[3]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[4]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[5]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[6]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[7]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[8]                 ;
+; MmuPlugin_ports_0_cache_3_virtualAddress_1[9]                 ;
+; MmuPlugin_ports_0_cache_4_allowExecute                        ;
+; MmuPlugin_ports_0_cache_4_allowRead                           ;
+; MmuPlugin_ports_0_cache_4_allowWrite                          ;
+; MmuPlugin_ports_0_cache_4_exception                           ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[0]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[1]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[2]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[3]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[4]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[5]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[6]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[7]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[8]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_0[9]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[0]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[1]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[2]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[3]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[4]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[5]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[6]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[7]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[8]                ;
+; MmuPlugin_ports_0_cache_4_physicalAddress_1[9]                ;
+; MmuPlugin_ports_0_cache_4_superPage                           ;
+; MmuPlugin_ports_0_cache_4_valid                               ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[0]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[1]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[2]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[3]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[4]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[5]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[6]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[7]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[8]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_0[9]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[0]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[1]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[2]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[3]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[4]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[5]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[6]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[7]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[8]                 ;
+; MmuPlugin_ports_0_cache_4_virtualAddress_1[9]                 ;
+; MmuPlugin_ports_0_cache_5_allowExecute                        ;
+; MmuPlugin_ports_0_cache_5_allowRead                           ;
+; MmuPlugin_ports_0_cache_5_allowWrite                          ;
+; MmuPlugin_ports_0_cache_5_exception                           ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[0]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[1]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[2]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[3]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[4]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[5]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[6]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[7]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[8]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_0[9]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[0]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[1]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[2]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[3]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[4]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[5]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[6]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[7]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[8]                ;
+; MmuPlugin_ports_0_cache_5_physicalAddress_1[9]                ;
+; MmuPlugin_ports_0_cache_5_superPage                           ;
+; MmuPlugin_ports_0_cache_5_valid                               ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[0]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[1]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[2]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[3]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[4]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[5]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[6]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[7]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[8]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_0[9]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[0]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[1]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[2]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[3]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[4]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[5]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[6]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[7]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[8]                 ;
+; MmuPlugin_ports_0_cache_5_virtualAddress_1[9]                 ;
+; MmuPlugin_ports_0_entryToReplace_value[0]                     ;
+; MmuPlugin_ports_0_entryToReplace_value[1]                     ;
+; MmuPlugin_ports_0_entryToReplace_value[2]                     ;
+; MmuPlugin_satp_ppn[3]                                         ;
+; MmuPlugin_shared_pteBuffer_PPN0[0]                            ;
+; MmuPlugin_shared_pteBuffer_PPN0[1]                            ;
+; MmuPlugin_shared_pteBuffer_PPN0[2]                            ;
+; MmuPlugin_shared_pteBuffer_PPN0[4]                            ;
+; MmuPlugin_shared_pteBuffer_PPN0[5]                            ;
+; MmuPlugin_shared_pteBuffer_PPN0[6]                            ;
+; MmuPlugin_shared_pteBuffer_PPN1[0]                            ;
+; MmuPlugin_shared_pteBuffer_PPN1[1]                            ;
+; MmuPlugin_shared_pteBuffer_PPN1[2]                            ;
+; MmuPlugin_shared_pteBuffer_PPN1[4]                            ;
+; MmuPlugin_shared_pteBuffer_PPN1[6]                            ;
+; MmuPlugin_shared_state_1_.010                                 ;
+; MmuPlugin_shared_state_1_.100                                 ;
+; MmuPlugin_shared_vpn_1[0]                                     ;
+; MmuPlugin_shared_vpn_1[1]                                     ;
+; MmuPlugin_shared_vpn_1[2]                                     ;
+; MmuPlugin_shared_vpn_1[3]                                     ;
+; MmuPlugin_shared_vpn_1[4]                                     ;
+; MmuPlugin_shared_vpn_1[5]                                     ;
+; MmuPlugin_shared_vpn_1[6]                                     ;
+; MmuPlugin_shared_vpn_1[7]                                     ;
+; _zz_133_[0]                                                   ;
+; _zz_133_[1]                                                   ;
+; _zz_133_[22]                                                  ;
+; dataCache_1_|loader_error                                     ;
+; dataCache_1_|stage0_colisions_regNextWhen[0]                  ;
+; dataCache_1_|stageA_request_data[0]                           ;
+; dataCache_1_|stageA_request_data[13]                          ;
+; dataCache_1_|stageA_request_data[15]                          ;
+; dataCache_1_|stageA_request_data[1]                           ;
+; dataCache_1_|stageA_request_data[22]                          ;
+; dataCache_1_|stageA_request_data[31]                          ;
+; dataCache_1_|stageA_request_data[5]                           ;
+; dataCache_1_|stageA_request_data[6]                           ;
+; dataCache_1_|stageA_request_data[7]                           ;
+; dataCache_1_|stageB_colisions[0]                              ;
+; dataCache_1_|stageB_dataReadRsp_0[5]                          ;
+; dataCache_1_|stageB_dataReadRsp_0[6]                          ;
+; dataCache_1_|stageB_dataReadRsp_0[7]                          ;
+; dataCache_1_|stageB_mmuRsp_allowRead                          ;
+; dataCache_1_|stageB_mmuRsp_allowWrite                         ;
+; dataCache_1_|stageB_mmuRsp_exception                          ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[12]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[13]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[14]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[15]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[16]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[17]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[18]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[19]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[1]                 ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[20]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[21]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[22]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[23]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[24]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[25]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[26]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[27]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[28]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[29]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[30]                ;
+; dataCache_1_|stageB_mmuRsp_physicalAddress[31]                ;
+; dataCache_1_|stageB_request_data[0]                           ;
+; dataCache_1_|stageB_request_data[13]                          ;
+; dataCache_1_|stageB_request_data[15]                          ;
+; dataCache_1_|stageB_request_data[1]                           ;
+; dataCache_1_|stageB_request_data[22]                          ;
+; dataCache_1_|stageB_request_data[31]                          ;
+; dataCache_1_|stageB_request_data[5]                           ;
+; dataCache_1_|stageB_request_data[6]                           ;
+; dataCache_1_|stageB_request_data[7]                           ;
+; decode_to_execute_IS_CSR                                      ;
+; decode_to_execute_IS_SFENCE_VMA                               ;
+; decode_to_execute_SRC_LESS_UNSIGNED                           ;
+; execute_to_memory_BRANCH_CALC[22]                             ;
+; execute_to_memory_BRANCH_CALC[23]                             ;
+; execute_to_memory_BRANCH_CALC[26]                             ;
+; execute_to_memory_BRANCH_CALC[2]                              ;
+; execute_to_memory_BRANCH_CALC[3]                              ;
+; execute_to_memory_BRANCH_CALC[4]                              ;
+; execute_to_memory_BRANCH_CALC[5]                              ;
+; execute_to_memory_BRANCH_CALC[7]                              ;
+; execute_to_memory_BRANCH_CALC[9]                              ;
+; execute_to_memory_IS_SFENCE_VMA                               ;
+; execute_to_memory_MEMORY_WR                                   ;
+; execute_to_memory_MUL_HL[15]                                  ;
+; execute_to_memory_MUL_HL[8]                                   ;
+; execute_to_memory_MUL_LL[0]                                   ;
+; execute_to_memory_MUL_LL[1]                                   ;
+; execute_to_memory_MUL_LL[24]                                  ;
+; execute_to_memory_PC[23]                                      ;
+; execute_to_memory_PC[26]                                      ;
+; execute_to_memory_REGFILE_WRITE_DATA[1]                       ;
+; execute_to_memory_REGFILE_WRITE_DATA[22]                      ;
+; execute_to_memory_REGFILE_WRITE_DATA[26]                      ;
+; memory_DivPlugin_div_result[0]                                ;
+; memory_DivPlugin_div_result[1]                                ;
+; memory_DivPlugin_div_result[22]                               ;
+; memory_DivPlugin_div_result[26]                               ;
+; memory_DivPlugin_div_result[2]                                ;
+; memory_DivPlugin_div_result[5]                                ;
+; memory_DivPlugin_div_result[6]                                ;
+; memory_DivPlugin_div_result[7]                                ;
+; memory_to_writeBack_IS_SFENCE_VMA                             ;
+; memory_to_writeBack_MEMORY_WR                                 ;
+; memory_to_writeBack_MUL_LOW[0]                                ;
+; memory_to_writeBack_MUL_LOW[1]                                ;
+; memory_to_writeBack_MUL_LOW[22]                               ;
+; memory_to_writeBack_PC[23]                                    ;
+; memory_to_writeBack_PC[26]                                    ;
+; memory_to_writeBack_PC[2]                                     ;
+; memory_to_writeBack_PC[3]                                     ;
+; memory_to_writeBack_PC[5]                                     ;
+; memory_to_writeBack_REGFILE_WRITE_DATA[26]                    ;
++---------------------------------------------------------------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	2
+Rule Parameters:      	max_violations = 500
++------------------------------------------------+
+; FLP-10500 - Non Driving Top Level Inputs Found ;
++------------------------------------------------+
+; Input Name                                     ;
++------------------------------------------------+
+; debug_bus_cmd_payload_address[0]               ;
+; debug_bus_cmd_payload_address[1]               ;
++------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------------------------------------------------------------------+
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes ;
++-------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------+
+; RES-30131 - Reset Nets with Polarity Conflict ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------------+
+; RES-30132 - Registers May Not Be Properly Reset ;
++-------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------+
+; TMC-20052 - Inferred Latch Count Check ;
++----------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		DSP_HFN_Threshold = 500
++---------------------------------------------------+
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net ;
++---------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------------+
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++------------------------------------------------------------------------+
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested ;
++------------------------------------------------------------------------+
+
+

@@ -1,0 +1,1065 @@
+Design Assistant report for vexrisc_full
+Fri Feb 26 15:48:08 2021
+Quartus Prime Version 20.3.0 Build 158 09/24/2020 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Signoff) Results - 2 of 66 Rules Failed
+  3. TMC-20012 - Missing Output Delay Constraint
+  4. TMC-20011 - Missing Input Delay Constraint
+  5. CDC-50001 - 1-Bit Asynchronous Transfer Not Synchronized
+  6. CDC-50002 - 1-Bit Asynchronous Transfer Missing Timing Constraint
+  7. CDC-50003 - CE-Type CDC Bus with Insufficient Constraints
+  8. CDC-50004 - CDC Bus Transfer through Logic with Insufficient Constraints
+  9. CDC-50011 - Combinational Logic Before Synchronizer Chain
+ 10. CDC-50012 - Multiple Clock Domains Driving a Synchronizer Chain
+ 11. CLK-30026 - Missing Clock Assignment
+ 12. CLK-30027 - Multiple Clock Assignments Found
+ 13. CLK-30028 - Invalid Generated Clock
+ 14. CLK-30029 - Invalid Clock Assignments
+ 15. CLK-30030 - PLL Setting Violation
+ 16. CLK-30031 - Input Delay Assigned to Clock
+ 17. CLK-30033 - Invalid Clock Group Assignment
+ 18. CLK-30034 - Clock Pairs Missing Exclusive Clock Group Assignment
+ 19. RDC-50001 - Reconvergence of Multiple Asynchronous Reset Synchronizers in Different Reset Domains
+ 20. RDC-50002 - Reconvergence of Multiple Asynchronous Reset Synchronizers in a Common Reset Domain
+ 21. RES-50001 - Asynchronous Reset Is Not Synchronized
+ 22. RES-50002 - Asynchronous Reset is Insufficiently Synchronized
+ 23. RES-50003 - Asynchronous Reset Missing Timing Constraint
+ 24. RES-50004 - Multiple Asynchronous Resets within Reset Synchronizer Chain
+ 25. TMC-20013 - Partial Input Delay
+ 26. TMC-20014 - Partial Output Delay
+ 27. TMC-20015 - Inconsistent Min-Max Delay
+ 28. TMC-20016 - Invalid Reference Pin
+ 29. TMC-20017 - Loops Detected
+ 30. TMC-20018 - Latches Detected
+ 31. TMC-20019 - Partial Multicycle Assignment
+ 32. TMC-20022 - Incomplete I/O Delay Assignment
+ 33. TMC-20023 - Invalid Set Net Delay Assignment
+ 34. TMC-20024 - Synchronous Data Delay Assignment
+ 35. FLP-10000 - Physical RAM with Utilization Below Threshold
+ 36. TMC-20021 - Partial Min-Max Delay Assignment
+ 37. TMC-20200 - Paths Failing Setup Analysis with Impossible Requirements
+ 38. TMC-20201 - Paths Failing Setup Analysis with High Clock Skew
+ 39. TMC-20202 - Paths Failing Setup Analysis with High Logic Delay
+ 40. TMC-20203 - Paths Failing Setup Analysis with High Fabric Interconnect Delay
+ 41. TMC-20206 - DSP Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis
+ 42. TMC-20207 - DSP Blocks with Unregistered Inputs that are the Destination of Paths Failing Setup Analysis
+ 43. TMC-20208 - RAM Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis
+ 44. TMC-20209 - Paths Failing Setup Analysis with High Routing Delay due to Congestion
+ 45. TMC-20210 - Paths Failing Setup Analysis with High Routing Delay Added for Hold
+ 46. TMC-20212 - Paths Failing Setup Analysis with Global Routing in Data Path
+ 47. TMC-20213 - Paths Failing Setup Analysis with Locally Routed Clock
+ 48. TMC-20214 - Buses with Incoming Paths Failing Setup Analysis with Multiple Sequential Adder Chains
+ 49. TMC-20215 - Buses with Incoming Paths Failing Setup Analysis with Multipliers Implemented in Logic
+ 50. TMC-20216 - Paths Failing Setup Analysis with Inferred-RAM Shift Register Endpoints
+ 51. TMC-20217 - Paths Failing Setup Analysis with Clock-As-Data
+ 52. TMC-20220 - RAM Blocks with Restricted Fmax below Required Fmax
+ 53. TMC-20312 - Paths Failing Hold Analysis with Global Routing in Data Path
+ 54. TMC-20313 - Paths Failing Hold Analysis with Locally Routed Clock
+ 55. TMC-20712 - Paths Failing Recovery Analysis with Global Routing in Data Path
+ 56. TMC-20713 - Paths Failing Recovery Analysis with Locally Routed Clock
+ 57. TMC-20812 - Paths Failing Removal Analysis with Global Routing in Data Path
+ 58. TMC-20813 - Paths Failing Removal Analysis with Locally Routed Clock
+ 59. CLK-30032 - Invalid Create Clock Assignment
+ 60. RES-50010 - Reset Synchronizer Chains with Constant Output
+ 61. TMC-20020 - Invalid Multicycle Assignment
+ 62. TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint
+ 63. TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication
+ 64. TMC-20552 - User Selected Duplication Candidate was Rejected
+ 65. TMC-20601 - Registers with High Immediate Fan-Out Tension
+ 66. TMC-20602 - Registers with High Timing Path Endpoint Tension
+ 67. TMC-20603 - Registers with High Immediate Fan-Out Span
+ 68. TMC-20604 - Registers with High Timing Path Endpoint Span
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant (Signoff) Results - 2 of 66 Rules Failed                                                                        ;
++----------------------------------------------------------------------------------------------------------+----------+------------+
+; Rule                                                                                                     ; Severity ; Violations ;
++----------------------------------------------------------------------------------------------------------+----------+------------+
+; TMC-20012 - Missing Output Delay Constraint                                                              ; High     ; 144        ;
+; TMC-20011 - Missing Input Delay Constraint                                                               ; High     ; 115        ;
+; CDC-50001 - 1-Bit Asynchronous Transfer Not Synchronized                                                 ; High     ; 0          ;
+; CDC-50002 - 1-Bit Asynchronous Transfer Missing Timing Constraint                                        ; High     ; 0          ;
+; CDC-50003 - CE-Type CDC Bus with Insufficient Constraints                                                ; High     ; 0          ;
+; CDC-50004 - CDC Bus Transfer through Logic with Insufficient Constraints                                 ; High     ; 0          ;
+; CDC-50011 - Combinational Logic Before Synchronizer Chain                                                ; High     ; 0          ;
+; CDC-50012 - Multiple Clock Domains Driving a Synchronizer Chain                                          ; High     ; 0          ;
+; CLK-30026 - Missing Clock Assignment                                                                     ; High     ; 0          ;
+; CLK-30027 - Multiple Clock Assignments Found                                                             ; High     ; 0          ;
+; CLK-30028 - Invalid Generated Clock                                                                      ; High     ; 0          ;
+; CLK-30029 - Invalid Clock Assignments                                                                    ; High     ; 0          ;
+; CLK-30030 - PLL Setting Violation                                                                        ; High     ; 0          ;
+; CLK-30031 - Input Delay Assigned to Clock                                                                ; High     ; 0          ;
+; CLK-30033 - Invalid Clock Group Assignment                                                               ; High     ; 0          ;
+; CLK-30034 - Clock Pairs Missing Exclusive Clock Group Assignment                                         ; High     ; 0          ;
+; RDC-50001 - Reconvergence of Multiple Asynchronous Reset Synchronizers in Different Reset Domains        ; High     ; 0          ;
+; RDC-50002 - Reconvergence of Multiple Asynchronous Reset Synchronizers in a Common Reset Domain          ; High     ; 0          ;
+; RES-50001 - Asynchronous Reset Is Not Synchronized                                                       ; High     ; 0          ;
+; RES-50002 - Asynchronous Reset is Insufficiently Synchronized                                            ; High     ; 0          ;
+; RES-50003 - Asynchronous Reset Missing Timing Constraint                                                 ; High     ; 0          ;
+; RES-50004 - Multiple Asynchronous Resets within Reset Synchronizer Chain                                 ; High     ; 0          ;
+; TMC-20013 - Partial Input Delay                                                                          ; High     ; 0          ;
+; TMC-20014 - Partial Output Delay                                                                         ; High     ; 0          ;
+; TMC-20015 - Inconsistent Min-Max Delay                                                                   ; High     ; 0          ;
+; TMC-20016 - Invalid Reference Pin                                                                        ; High     ; 0          ;
+; TMC-20017 - Loops Detected                                                                               ; High     ; 0          ;
+; TMC-20018 - Latches Detected                                                                             ; High     ; 0          ;
+; TMC-20019 - Partial Multicycle Assignment                                                                ; High     ; 0          ;
+; TMC-20022 - Incomplete I/O Delay Assignment                                                              ; High     ; 0          ;
+; TMC-20023 - Invalid Set Net Delay Assignment                                                             ; High     ; 0          ;
+; TMC-20024 - Synchronous Data Delay Assignment                                                            ; High     ; 0          ;
+; FLP-10000 - Physical RAM with Utilization Below Threshold                                                ; Medium   ; 0          ;
+; TMC-20021 - Partial Min-Max Delay Assignment                                                             ; Medium   ; 0          ;
+; TMC-20200 - Paths Failing Setup Analysis with Impossible Requirements                                    ; Medium   ; 0          ;
+; TMC-20201 - Paths Failing Setup Analysis with High Clock Skew                                            ; Medium   ; 0          ;
+; TMC-20202 - Paths Failing Setup Analysis with High Logic Delay                                           ; Medium   ; 0          ;
+; TMC-20203 - Paths Failing Setup Analysis with High Fabric Interconnect Delay                             ; Medium   ; 0          ;
+; TMC-20206 - DSP Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis     ; Medium   ; 0          ;
+; TMC-20207 - DSP Blocks with Unregistered Inputs that are the Destination of Paths Failing Setup Analysis ; Medium   ; 0          ;
+; TMC-20208 - RAM Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis     ; Medium   ; 0          ;
+; TMC-20209 - Paths Failing Setup Analysis with High Routing Delay due to Congestion                       ; Medium   ; 0          ;
+; TMC-20210 - Paths Failing Setup Analysis with High Routing Delay Added for Hold                          ; Medium   ; 0          ;
+; TMC-20212 - Paths Failing Setup Analysis with Global Routing in Data Path                                ; Medium   ; 0          ;
+; TMC-20213 - Paths Failing Setup Analysis with Locally Routed Clock                                       ; Medium   ; 0          ;
+; TMC-20214 - Buses with Incoming Paths Failing Setup Analysis with Multiple Sequential Adder Chains       ; Medium   ; 0          ;
+; TMC-20215 - Buses with Incoming Paths Failing Setup Analysis with Multipliers Implemented in Logic       ; Medium   ; 0          ;
+; TMC-20216 - Paths Failing Setup Analysis with Inferred-RAM Shift Register Endpoints                      ; Medium   ; 0          ;
+; TMC-20217 - Paths Failing Setup Analysis with Clock-As-Data                                              ; Medium   ; 0          ;
+; TMC-20220 - RAM Blocks with Restricted Fmax below Required Fmax                                          ; Medium   ; 0          ;
+; TMC-20312 - Paths Failing Hold Analysis with Global Routing in Data Path                                 ; Medium   ; 0          ;
+; TMC-20313 - Paths Failing Hold Analysis with Locally Routed Clock                                        ; Medium   ; 0          ;
+; TMC-20712 - Paths Failing Recovery Analysis with Global Routing in Data Path                             ; Medium   ; 0          ;
+; TMC-20713 - Paths Failing Recovery Analysis with Locally Routed Clock                                    ; Medium   ; 0          ;
+; TMC-20812 - Paths Failing Removal Analysis with Global Routing in Data Path                              ; Medium   ; 0          ;
+; TMC-20813 - Paths Failing Removal Analysis with Locally Routed Clock                                     ; Medium   ; 0          ;
+; CLK-30032 - Invalid Create Clock Assignment                                                              ; Low      ; 0          ;
+; RES-50010 - Reset Synchronizer Chains with Constant Output                                               ; Low      ; 0          ;
+; TMC-20020 - Invalid Multicycle Assignment                                                                ; Low      ; 0          ;
+; TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint               ; Low      ; 0          ;
+; TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication                ; Low      ; 0          ;
+; TMC-20552 - User Selected Duplication Candidate was Rejected                                             ; Low      ; 0          ;
+; TMC-20601 - Registers with High Immediate Fan-Out Tension                                                ; Low      ; 0          ;
+; TMC-20602 - Registers with High Timing Path Endpoint Tension                                             ; Low      ; 0          ;
+; TMC-20603 - Registers with High Immediate Fan-Out Span                                                   ; Low      ; 0          ;
+; TMC-20604 - Registers with High Timing Path Endpoint Span                                                ; Low      ; 0          ;
++----------------------------------------------------------------------------------------------------------+----------+------------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	144
+Rule Parameters:      	max_violations = 500
++------------------------------------------------------------------------+
+; TMC-20012 - Missing Output Delay Constraint                            ;
++------------------------------+-----------------------------------------+
+; Port                         ; Reason                                  ;
++------------------------------+-----------------------------------------+
+; dBus_cmd_payload_address[0]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[10] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[11] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[12] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[13] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[14] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[15] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[16] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[17] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[18] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[19] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[1]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[20] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[21] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[22] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[23] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[24] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[25] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[26] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[27] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[28] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[29] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[2]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[30] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[31] ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[3]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[4]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[5]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[6]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[7]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[8]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_address[9]  ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[0]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[10]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[11]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[12]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[13]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[14]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[15]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[16]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[17]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[18]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[19]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[1]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[20]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[21]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[22]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[23]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[24]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[25]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[26]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[27]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[28]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[29]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[2]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[30]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[31]    ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[3]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[4]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[5]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[6]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[7]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[8]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_data[9]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_last        ; No output delay was set on output port. ;
+; dBus_cmd_payload_length[0]   ; No output delay was set on output port. ;
+; dBus_cmd_payload_length[1]   ; No output delay was set on output port. ;
+; dBus_cmd_payload_length[2]   ; No output delay was set on output port. ;
+; dBus_cmd_payload_mask[0]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_mask[1]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_mask[2]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_mask[3]     ; No output delay was set on output port. ;
+; dBus_cmd_payload_wr          ; No output delay was set on output port. ;
+; dBus_cmd_valid               ; No output delay was set on output port. ;
+; debug_bus_cmd_ready          ; No output delay was set on output port. ;
+; debug_bus_rsp_data[0]        ; No output delay was set on output port. ;
+; debug_bus_rsp_data[10]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[11]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[12]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[13]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[14]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[15]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[16]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[17]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[18]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[19]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[1]        ; No output delay was set on output port. ;
+; debug_bus_rsp_data[20]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[21]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[22]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[23]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[24]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[25]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[26]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[27]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[28]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[29]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[2]        ; No output delay was set on output port. ;
+; debug_bus_rsp_data[30]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[31]       ; No output delay was set on output port. ;
+; debug_bus_rsp_data[3]        ; No output delay was set on output port. ;
+; debug_bus_rsp_data[4]        ; No output delay was set on output port. ;
+; debug_bus_rsp_data[5]        ; No output delay was set on output port. ;
+; debug_bus_rsp_data[6]        ; No output delay was set on output port. ;
+; debug_bus_rsp_data[7]        ; No output delay was set on output port. ;
+; debug_bus_rsp_data[8]        ; No output delay was set on output port. ;
+; debug_bus_rsp_data[9]        ; No output delay was set on output port. ;
+; debug_resetOut               ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[0]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[10] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[11] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[12] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[13] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[14] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[15] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[16] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[17] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[18] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[19] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[1]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[20] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[21] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[22] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[23] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[24] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[25] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[26] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[27] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[28] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[29] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[2]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[30] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[31] ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[3]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[4]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[5]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[6]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[7]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[8]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_address[9]  ; No output delay was set on output port. ;
+; iBus_cmd_payload_size[0]     ; No output delay was set on output port. ;
+; iBus_cmd_payload_size[1]     ; No output delay was set on output port. ;
+; iBus_cmd_payload_size[2]     ; No output delay was set on output port. ;
+; iBus_cmd_valid               ; No output delay was set on output port. ;
++------------------------------+-----------------------------------------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	115
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------+
+; TMC-20011 - Missing Input Delay Constraint                               ;
++----------------------------------+---------------------------------------+
+; Port                             ; Reason                                ;
++----------------------------------+---------------------------------------+
+; dBus_cmd_ready                   ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[0]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[10]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[11]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[12]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[13]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[14]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[15]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[16]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[17]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[18]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[19]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[1]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[20]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[21]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[22]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[23]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[24]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[25]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[26]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[27]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[28]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[29]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[2]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[30]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[31]        ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[3]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[4]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[5]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[6]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[7]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[8]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_data[9]         ; No input delay was set on input port. ;
+; dBus_rsp_payload_error           ; No input delay was set on input port. ;
+; dBus_rsp_valid                   ; No input delay was set on input port. ;
+; debugReset                       ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_address[2] ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_address[3] ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_address[4] ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_address[5] ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_address[6] ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_address[7] ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[0]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[10]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[11]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[12]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[13]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[14]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[15]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[16]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[17]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[18]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[19]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[1]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[20]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[21]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[22]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[23]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[24]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[25]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[26]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[27]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[28]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[29]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[2]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[30]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[31]   ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[3]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[4]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[5]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[6]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[7]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[8]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_data[9]    ; No input delay was set on input port. ;
+; debug_bus_cmd_payload_wr         ; No input delay was set on input port. ;
+; debug_bus_cmd_valid              ; No input delay was set on input port. ;
+; externalInterrupt                ; No input delay was set on input port. ;
+; iBus_cmd_ready                   ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[0]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[10]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[11]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[12]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[13]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[14]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[15]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[16]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[17]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[18]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[19]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[1]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[20]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[21]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[22]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[23]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[24]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[25]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[26]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[27]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[28]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[29]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[2]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[30]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[31]        ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[3]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[4]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[5]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[6]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[7]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[8]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_data[9]         ; No input delay was set on input port. ;
+; iBus_rsp_payload_error           ; No input delay was set on input port. ;
+; iBus_rsp_valid                   ; No input delay was set on input port. ;
+; reset                            ; No input delay was set on input port. ;
+; softwareInterrupt                ; No input delay was set on input port. ;
+; timerInterrupt                   ; No input delay was set on input port. ;
++----------------------------------+---------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------------+
+; CDC-50001 - 1-Bit Asynchronous Transfer Not Synchronized ;
++----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------------------------------+
+; CDC-50002 - 1-Bit Asynchronous Transfer Missing Timing Constraint ;
++-------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------+
+; CDC-50003 - CE-Type CDC Bus with Insufficient Constraints ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------+
+; CDC-50004 - CDC Bus Transfer through Logic with Insufficient Constraints ;
++--------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------+
+; CDC-50011 - Combinational Logic Before Synchronizer Chain ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------+
+; CDC-50012 - Multiple Clock Domains Driving a Synchronizer Chain ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------+
+; CLK-30026 - Missing Clock Assignment ;
++--------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------+
+; CLK-30027 - Multiple Clock Assignments Found ;
++----------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------+
+; CLK-30028 - Invalid Generated Clock ;
++-------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++---------------------------------------+
+; CLK-30029 - Invalid Clock Assignments ;
++---------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------+
+; CLK-30030 - PLL Setting Violation ;
++-----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------+
+; CLK-30031 - Input Delay Assigned to Clock ;
++-------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------+
+; CLK-30033 - Invalid Clock Group Assignment ;
++--------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++------------------------------------------------------------------+
+; CLK-30034 - Clock Pairs Missing Exclusive Clock Group Assignment ;
++------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++---------------------------------------------------------------------------------------------------+
+; RDC-50001 - Reconvergence of Multiple Asynchronous Reset Synchronizers in Different Reset Domains ;
++---------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------------------------------------------------------------+
+; RDC-50002 - Reconvergence of Multiple Asynchronous Reset Synchronizers in a Common Reset Domain ;
++-------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------+
+; RES-50001 - Asynchronous Reset Is Not Synchronized ;
++----------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++---------------------------------------------------------------+
+; RES-50002 - Asynchronous Reset is Insufficiently Synchronized ;
++---------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------------+
+; RES-50003 - Asynchronous Reset Missing Timing Constraint ;
++----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------+
+; RES-50004 - Multiple Asynchronous Resets within Reset Synchronizer Chain ;
++--------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++---------------------------------+
+; TMC-20013 - Partial Input Delay ;
++---------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------+
+; TMC-20014 - Partial Output Delay ;
++----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------+
+; TMC-20015 - Inconsistent Min-Max Delay ;
++----------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------+
+; TMC-20016 - Invalid Reference Pin ;
++-----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------+
+; TMC-20017 - Loops Detected ;
++----------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++------------------------------+
+; TMC-20018 - Latches Detected ;
++------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------+
+; TMC-20019 - Partial Multicycle Assignment ;
++-------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++---------------------------------------------+
+; TMC-20022 - Incomplete I/O Delay Assignment ;
++---------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------+
+; TMC-20023 - Invalid Set Net Delay Assignment ;
++----------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------+
+; TMC-20024 - Synchronous Data Delay Assignment ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		device_ram_occupation = 80
+		low_utilization = 10
++-----------------------------------------------------------+
+; FLP-10000 - Physical RAM with Utilization Below Threshold ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------+
+; TMC-20021 - Partial Min-Max Delay Assignment ;
++----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++-----------------------------------------------------------------------+
+; TMC-20200 - Paths Failing Setup Analysis with Impossible Requirements ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++---------------------------------------------------------------+
+; TMC-20201 - Paths Failing Setup Analysis with High Clock Skew ;
++---------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++----------------------------------------------------------------+
+; TMC-20202 - Paths Failing Setup Analysis with High Logic Delay ;
++----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++------------------------------------------------------------------------------+
+; TMC-20203 - Paths Failing Setup Analysis with High Fabric Interconnect Delay ;
++------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++------------------------------------------------------------------------------------------------------+
+; TMC-20206 - DSP Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis ;
++------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++----------------------------------------------------------------------------------------------------------+
+; TMC-20207 - DSP Blocks with Unregistered Inputs that are the Destination of Paths Failing Setup Analysis ;
++----------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++------------------------------------------------------------------------------------------------------+
+; TMC-20208 - RAM Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis ;
++------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++------------------------------------------------------------------------------------+
+; TMC-20209 - Paths Failing Setup Analysis with High Routing Delay due to Congestion ;
++------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++---------------------------------------------------------------------------------+
+; TMC-20210 - Paths Failing Setup Analysis with High Routing Delay Added for Hold ;
++---------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++---------------------------------------------------------------------------+
+; TMC-20212 - Paths Failing Setup Analysis with Global Routing in Data Path ;
++---------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++--------------------------------------------------------------------+
+; TMC-20213 - Paths Failing Setup Analysis with Locally Routed Clock ;
++--------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
+		minimum_number_of_adders = 3
++----------------------------------------------------------------------------------------------------+
+; TMC-20214 - Buses with Incoming Paths Failing Setup Analysis with Multiple Sequential Adder Chains ;
++----------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
+		minimum_number_of_soft_mult_chains = 2
++----------------------------------------------------------------------------------------------------+
+; TMC-20215 - Buses with Incoming Paths Failing Setup Analysis with Multipliers Implemented in Logic ;
++----------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++-------------------------------------------------------------------------------------+
+; TMC-20216 - Paths Failing Setup Analysis with Inferred-RAM Shift Register Endpoints ;
++-------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++-------------------------------------------------------------+
+; TMC-20217 - Paths Failing Setup Analysis with Clock-As-Data ;
++-------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_setup_slack = 0
++-----------------------------------------------------------------+
+; TMC-20220 - RAM Blocks with Restricted Fmax below Required Fmax ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_hold_slack = 0
++--------------------------------------------------------------------------+
+; TMC-20312 - Paths Failing Hold Analysis with Global Routing in Data Path ;
++--------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_hold_slack = 0
++-------------------------------------------------------------------+
+; TMC-20313 - Paths Failing Hold Analysis with Locally Routed Clock ;
++-------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_recovery_slack = 0
++------------------------------------------------------------------------------+
+; TMC-20712 - Paths Failing Recovery Analysis with Global Routing in Data Path ;
++------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_recovery_slack = 0
++-----------------------------------------------------------------------+
+; TMC-20713 - Paths Failing Recovery Analysis with Locally Routed Clock ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_removal_slack = 0
++-----------------------------------------------------------------------------+
+; TMC-20812 - Paths Failing Removal Analysis with Global Routing in Data Path ;
++-----------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		maximum_removal_slack = 0
++----------------------------------------------------------------------+
+; TMC-20813 - Paths Failing Removal Analysis with Locally Routed Clock ;
++----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++---------------------------------------------+
+; CLK-30032 - Invalid Create Clock Assignment ;
++---------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++------------------------------------------------------------+
+; RES-50010 - Reset Synchronizer Chains with Constant Output ;
++------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------+
+; TMC-20020 - Invalid Multicycle Assignment ;
++-------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------------------------+
+; TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint ;
++--------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		avg_dup_fanout = 1000
++-------------------------------------------------------------------------------------------+
+; TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication ;
++-------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------+
+; TMC-20552 - User Selected Duplication Candidate was Rejected ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		tension = 100000
++-----------------------------------------------------------+
+; TMC-20601 - Registers with High Immediate Fan-Out Tension ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		tension = 100000
+		ignore_high_fanout_tension = False
++--------------------------------------------------------------+
+; TMC-20602 - Registers with High Timing Path Endpoint Tension ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		span = 250
++--------------------------------------------------------+
+; TMC-20603 - Registers with High Immediate Fan-Out Span ;
++--------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
+		span = 250
+		ignore_high_fanout_span = False
++-----------------------------------------------------------+
+; TMC-20604 - Registers with High Timing Path Endpoint Span ;
++-----------------------------------------------------------+
+
+

@@ -1,0 +1,1 @@
+create_clock -name clk -period 4 -waveform{0.000 2.00} [getclock clk]

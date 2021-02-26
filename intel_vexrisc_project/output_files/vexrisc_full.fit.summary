@@ -1,0 +1,20 @@
+Fitter Status : Successful - Fri Feb 26 15:47:57 2021
+Quartus Prime Version : 20.3.0 Build 158 09/24/2020 SC Pro Edition
+Revision Name : vexrisc_full
+Top-level Entity Name : vexrisc_full
+Family : Stratix 10
+Device : 1SX065HH1F35E1VG
+Timing Models : Preliminary
+Power Models : Preliminary
+Device Status : Advance
+Logic utilization (in ALMs) : 1,666 / 207,360 ( < 1 % )
+Total dedicated logic registers : 2781
+Total pins : 0 / 504 ( 0 % )
+Total block memory bits : 75,264 / 50,974,720 ( < 1 % )
+Total RAM Blocks : 11 / 2,489 ( < 1 % )
+Total DSP Blocks : 2 / 1,152 ( < 1 % )
+Total HSSI RX channels : 0 / 24 ( 0 % )
+Total HSSI TX channels : 0 / 24 ( 0 % )
+Total HSSI HPS : 0 / 1 ( 0 % )
+Total HSSI EHIPs : 0 / 1 ( 0 % )
+Total PLLs : 0 / 48 ( 0 % )
